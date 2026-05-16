@@ -1,0 +1,160 @@
+/* ============================================================
+   FILE: _ABOUT.SCSS (Định dạng trang Giới thiệu)
+   ============================================================ */
+
+/* Thanh điều hướng chính của người dùng */
+.user-navbar {
+    background-color: #E0AD3B; /* Màu xanh lá như mẫu */
+    padding: 0;
+    font-family: sans-serif;
+
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+    }
+
+    .nav-category-btn {
+        background-color: #111;
+        color: white;
+        padding: 15px 20px;
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.2s;
+
+            &:hover, &.active {
+                background-color: #E0AD3B;
+            }
+        }
+    }
+}
+
+/* Tách biệt bố cục trang About */
+.about-page-layout {
+    display: flex;
+    gap: 35px;
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 0 15px;
+
+    @media (max-width: 992px) {
+        flex-direction: column; /* Bẻ dọc khi thu nhỏ màn hình */
+    }
+
+    /* Chuỗi banner bên trái */
+    .about-sidebar-banners {
+        flex: 0 0 300px; /* Cố định chiều rộng cột banner */
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        @media (max-width: 992px) {
+            flex: none;
+            flex-direction: row; /* Tablet nằm ngang */
+            flex-wrap: wrap;
+        }
+
+        .promo-banner {
+            width: 100%;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+
+            @media (max-width: 992px) {
+                width: calc(50% - 8px); /* Chia đôi trên tablet */
+            }
+            @media (max-width: 576px) {
+                width: 100%; /* Full dòng trên điện thoại */
+            }
+
+            img {
+                width: 100%;
+                display: block;
+                object-fit: cover;
+            }
+        }
+    }
+
+    /* Phần nội dung text bên phải */
+    .about-main-content {
+        flex: 1;
+        font-family: sans-serif;
+
+        .about-brand-title {
+            font-size: 28px;
+            color: #222;
+            margin: 0 0 20px 0;
+            font-weight: 700;
+        }
+
+        .about-paragraph {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+
+        .features-heading {
+            font-size: 22px;
+            color: #222;
+            margin: 35px 0 20px;
+            font-weight: 700;
+        }
+
+        /* List chức năng dùng dấu gạch ngang đầu dòng */
+        .features-done-list {
+            list-style: none;
+            padding: 0;
+
+            li {
+                position: relative;
+                padding-left: 18px;
+                margin-bottom: 12px;
+                font-size: 14.5px;
+                color: #2d3748;
+
+                &::before {
+                    content: "-";
+                    position: absolute;
+                    left: 0;
+                    color: #4a5568;
+                    font-weight: bold;
+                }
+
+                /* Nút chữ "Xem demo" màu xanh lá đặc trưng */
+                .demo-link {
+                    color: #E0AD3B;
+                    text-decoration: none;
+                    font-weight: 600;
+                    margin-left: 5px;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

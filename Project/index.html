@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA Figure</title>
+    <link rel="stylesheet" href="Styles\main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Images/Screenshot 2026-05-01 134410.png" alt="VA Figure">
+                </a>
+            </div>
+            
+            <!-- Thanh tìm kiếm -->
+            <!-- Chuyển div thành form hoặc bọc form bên ngoài -->
+            <form class="search-box">
+                <!-- Quan trọng: Phải có thuộc tính name="q" để lấy dữ liệu -->
+                <input type="text" name="q" placeholder="Tìm kiếm sản phẩm...">
+                
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+
+            <!-- Cụm chức năng -->
+            <div class="header-icons">
+                <div class="user-actions">
+                    <!-- Nút Đăng nhập -->
+                    <a href="login.html" class="login-link">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Đăng nhập</span>
+                    </a>
+
+                    <!-- Nút Giỏ hàng -->
+                    <a href="cart.html" class="cart-btn-link">
+                        <div class="cart-btn">
+                            <!-- Bọc icon và số 0 vào đây để làm điểm neo -->
+                            <span class="cart-icon-wrapper">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="cart-count">0</span>
+                            </span>
+                            <span>Giỏ hàng</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="sticky-header-container">
+        <nav class="main-nav">
+            <!-- Nút Menu Hamburger cho Mobile/Tablet -->
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="container" id="nav-list">
+                <!-- 1. Cửa hàng -->
+                <li><a href="shop.html?cat=Cửa Hàng">Cửa Hàng</a></li>
+
+                <!-- 2. Mục Mô Hình -->
+                <li class="has-submenu">
+                    <a href="shop.html?cat=Mô Hình">Mô Hình <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="shop.html?parent=Mô Hình&cat=Mô Hình Nữ">Mô Hình Nữ</a></li>
+                        <li><a href="shop.html?parent=Mô Hình&cat=Mô Hình Nam">Mô Hình Nam</a></li>
+                    </ul>
+                </li>
+
+                <!-- 3. Mục Nendoroid -->
+                <li class="has-submenu">
+                    <a href="shop.html?cat=Nendoroid">Nendoroid <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="shop.html?parent=Nendoroid&cat=Nendoroid Mới">Nendoroid Nữ</a></li>
+                        <li><a href="shop.html?parent=Nendoroid&cat=Nendoroid Đặt Trước">Nendoroid Nam</a></li>
+                    </ul>
+                </li>
+
+                <!-- 4. Các mục đơn khác -->
+                <li><a href="shop.html?cat=Pack Card">Pack Card</a></li>
+                <li><a href="shop.html?cat=Blind Box">Blind Box</a></li>
+                <li><a href="shop.html?cat=Phụ Kiện Khác">Phụ Kiện Khác</a></li>
+                
+                <!-- 5. Thẻ Tin Tức mới thêm vào đây -->
+                <li><a href="blogs.html">Tin Tức</a></li>
+                
+                <li><a href="lab_thuc_hanh.html">Lab Thực Hành</a></li>
+
+                <li><a href="about_us.html">Về Chúng Tôi</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="container main-layout">
+        <section class="banner"> <!-- Thẻ cha bao ngoài cùng -->
+            <div class="slider-container"> <!-- Thẻ con làm khung chứa slide -->
+                
+                <!-- Các ảnh banner (Giữ nguyên class slide) -->
+                <div class="slide active">
+                    <img src="Images\Screenshot 2026-05-01 141356.png" alt="Banner 1">
+                </div>
+                <div class="slide">
+                    <img src="Images\Screenshot 2026-05-01 141406.png" alt="Banner 2">
+                </div>
+                <div class="slide">
+                    <img src="Images\Screenshot 2026-05-01 141414.png" alt="Banner 3">
+                </div>
+
+                <!-- Nút điều hướng (Nên nằm trong slider-container để dễ căn vị trí) -->
+                <button class="prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+
+                <!-- Các chấm tròn nhỏ -->
+                <div class="dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                
+            </div>
+        </section>
+        
+        <aside class="sidebar-review">
+    <h3 class="sidebar-title"><i class="fa-solid fa-circle"></i> TIN TỨC</h3>
+    <div class="review-scroll-container">
+        
+        <!-- Bài 1: Mười năm sau năm 2016 (news-05) -->
+        <a href="blog_detail.html?id=news-05" class="review-link">
+            <div class="review-item">
+                <img src="Images/march-comes-in-like-a-lion-2-1777534569263449523725-0-0-1200-1920-crop-17775359298361359069871.webp" alt="Review">
+                <p>Mười năm sau năm 2016: Những tác phẩm anime vẫn giữ nguyên sức hút</p>
+            </div>
+        </a>
+
+        <!-- Bài 2: Kagurabachi (news-06) -->
+        <a href="blog_detail.html?id=news-06" class="review-link">
+            <div class="review-item">
+                <img src="Images/kb-teaser-en-17774504080891011386714-0-0-764-1221-crop-17774504341071747455539.webp" alt="Review">
+                <p>Trailer Kagurabachi cán mốc 6 triệu lượt xem sau 24 giờ</p>
+            </div>
+        </a>
+
+        <!-- Bài 3: Ani-May (news-07) -->
+        <a href="blog_detail.html?id=news-07" class="review-link">
+            <div class="review-item">
+                <img src="Images/crunchyroll-02-1760585106935962588350.webp" alt="Review">
+                <p>Chiến dịch Ani-May 2026: Crunchyroll chiếu miễn phí Solo Leveling</p>
+            </div>
+        </a>
+
+        <!-- Bài 4: My Hero Academia (news-08) -->
+        <a href="blog_detail.html?id=news-08" class="review-link">
+            <div class="review-item">
+                <img src="Images/3-1777279542357638045461-0-33-1053-1718-crop-17772807258241153683813.webp" alt="Review">
+                <p>My Hero Academia hé lộ tập đặc biệt: Lời chào sau cuối cho hành trình 10 năm</p>
+            </div>
+        </a>
+
+        <!-- Bài 5: Black Clover (news-09) -->
+        <a href="blog_detail.html?id=news-09" class="review-link">
+            <div class="review-item">
+                <img src="Images/anh-man-hinh-2026-04-26-luc-14-59-32-1777190381679936023752-0-20-846-1374-crop-177719040033460684114.webp" alt="Review">
+                <p>5 điều fan cần biết trước khi Black Clover sắp khép lại hành trình</p>
+            </div>
+        </a>
+        
+    </div>
+</aside>
+    </main>
+
+    <section class="container categories-grid">
+        <div class="category-card">
+            <img src="Images\c65514e3-4bf0-4035-8c39-34b959a8234b.jpg" alt="Figure Scale">
+        </div>
+        <div class="category-card">
+            <img src="Images\f44b1ca8-88f9-4679-8f95-987f5769b00e.jpg" alt="Blind Box">
+        </div>
+        <div class="category-card">
+            <img src="Images\c24c3ad7-cdcd-45ff-82a7-a4700e7cb5e2.jpg" alt="Nendoroid">
+        </div>
+    </section>
+
+    <section class="container anime-hot">
+        <h3 class="section-title">ANIME HOT HIỆN TẠI</h3>
+        <div class="anime-list">
+            <div class="anime-item">
+                <div class="anime-circle">
+                    <img src="Images\8fe1861a-8c58-4aea-a25c-3cdbd2355185.jpg" alt="Blue Archive">
+                </div>
+                <span>Blue Archive</span>
+            </div>
+            
+            <div class="anime-item">
+                <div class="anime-circle">
+                    <img src="Images\ba3c1669-a325-4218-af21-21592c99afd2.jpg" alt="One Piece">
+                </div>
+                <span>One Piece</span>
+            </div>
+            
+            <div class="anime-item">
+                <div class="anime-circle">
+                    <img src="Images\1a3c5178-0353-4881-ae8f-c28c16c5dfba.jpg" alt="Over Lord">
+                </div>
+                <span>Over Lord</span>
+            </div>
+            
+            <div class="anime-item">
+                <div class="anime-circle">
+                    <img src="  Images\63ee93d6-1d96-4cec-a974-c82114ba7b98.jpg" alt="Gotoubun no Hanayome">
+                </div>
+                <span>Gotoubun no Hanayome</span>
+            </div>
+            
+            <div class="anime-item">
+                <div class="anime-circle">
+                    <img src="Images\788bf97f-5574-4b6d-bb30-ed0213068bb3.jpg" alt="Jujutsu Kaisen">
+                </div>
+                <span>Jujutsu Kaisen</span>
+            </div>
+            
+            <div class="anime-item">
+                <div class="anime-circle">
+                    <img src="Images\639243c1-186f-4479-8fae-548c408998b2.jpg" alt="Hatsune Miku">
+                </div>
+                <span>Hatsune Miku</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHẦN: SẢN PHẨM MỚI -->
+<section class="container new-products-section">
+    <!-- Tiêu đề nằm ngang bên trên -->
+    <div class="section-header">
+        <h3 class="section-title">SẢN PHẨM MỚI</h3>
+    </div>
+    <!-- Lưới sản phẩm nằm bên dưới tiêu đề -->
+    <div class="product-grid">
+        <div class="product-card">
+        <a href="product-detail.html?id=sp-01" class="product-item-link">
+            <div class="product-img">
+                <img src="Images/51RPkzAjDML._AC_SX679_.jpg" alt="Shimoe Koharu">
+            </div>
+            <div class="product-info">
+                <h4 class="product-name">Mô hình Shimoe Koharu 22cm PVC</h4>
+                <p class="product-price">180.000đ</p>
+            </div>
+        </a>
+        <button class="add-to-cart-hover" data-id="sp-01">Thêm Vào Giỏ</button>
+    </div>
+
+    <div class="product-card">
+        <a href="product-detail.html?id=sp-02" class="product-item-link">
+            <div class="product-img">
+                <img src="Images/s-l960.webp" alt="Jingliu">
+            </div>
+            <div class="product-info">
+                <h4 class="product-name">Mô hình Honkai: Star Rail Jingliu 38cm PVC</h4>
+                <p class="product-price">550.000đ</p>
+            </div>
+        </a>
+        <button class="add-to-cart-hover" data-id="sp-02">Thêm Vào Giỏ</button>
+    </div>
+
+        <div class="product-card">
+            <a href="product-detail.html?id=sp-03" class="product-item-link">
+                <div class="product-img">
+                    <img src="Images/582c56fc8e1e1b244b32e3eab022389c98c4ad26.webp" alt="Hatsune Miku">
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">Hatsune Miku ver Outfit Sakura-Vocaloid-Chính hãng TAITO</h4>
+                    <p class="product-price">500.000đ</p>
+                </div>
+            </a>
+            <button class="add-to-cart-hover" data-id="sp-03">Thêm Vào Giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <a href="product-detail.html?id=sp-04" class="product-item-link">
+                <div class="product-img">
+                    <img src="Images/OnePieceBattleRecordCollectionExtra-CharlotteLinlin01.webp" alt="Charlotte Linlin">
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">Mô hình Charlotte Linlin dòng Battle Record Collection Extra</h4>
+                    <p class="product-price">950.000đ</p>
+                </div>
+            </a>
+            <button class="add-to-cart-hover" data-id="sp-04">Thêm Vào Giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <a href="product-detail.html?id=sp-05" class="product-item-link">
+                <div class="product-img">
+                    <img src="Images/hinh-anh_2026-04-30_150914867-e1777536574948.webp" alt="Albedo">
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">Mô hình Albedo ver Pirate dòng Coreful-Overlord</h4>
+                    <p class="product-price">950.000đ</p>
+                </div>
+            </a>
+            <button class="add-to-cart-hover" data-id="sp-05">Thêm Vào Giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <a href="product-detail.html?id=sp-06" class="product-item-link">
+                <div class="product-img">
+                    <img src="Images/TheQuintessentialQuintupletsDesktopCuteFigure-NinoNakanoOriginalCatRoomWearVer._TaikureExclusive_1.webp" alt="Nino Nakano">
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">Mô hình Desktop Cute Nino Nakano Original Cat Room Wear Ver</h4>
+                    <p class="product-price">750.000đ</p>
+                </div>
+            </a>
+            <button class="add-to-cart-hover" data-id="sp-06">Thêm Vào Giỏ</button>
+        </div>
+    </div>
+</section>
+
+<!-- PHẦN: SẢN PHẨM BÁN CHẠY -->
+<section class="container best-sellers-section">
+    <div class="section-header">
+        <h3 class="section-title">SẢN PHẨM BÁN CHẠY</h3>
+    </div>
+
+    <div class="product-grid">
+        <div class="product-card">
+            <a href="product-detail.html?id=sp-07" class="product-item-link">
+                <div class="product-img">
+                    <img src="Images/hinh-anh_2026-02-17_170512435-e1771322733808.webp" alt="SnowMiku">
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">Trio-Try-iT Hatsune Miku chủ đề Kuromi SnowMiku-Vocaloid-Chính hãng Furyu</h4>
+                    <p class="product-price">590.000đ</p>
+                </div>
+            </a>
+            <button class="add-to-cart-hover" data-id="sp-07">Thêm Vào Giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <a href="product-detail.html?id=sp-08" class="product-item-link">
+                <div class="product-img">
+                    <img src="Images/hinh-anh_2026-04-23_194413592-e1776948276631.webp" alt="Ace">
+                    <span class="tag-sale">-20%</span>
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">S.H.Figuarts Portgas D. Ace ver Marineford Summit Battle</h4>
+                    <p class="product-price">1.200.000đ <span class="old-price">1.500.000đ</span></p>
+                </div>
+            </a>
+            <button class="add-to-cart-hover" data-id="sp-08">Thêm Vào Giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <a href="product-detail.html?id=sp-09" class="product-item-link">
+                <div class="product-img">
+                    <img src="Images/TheQuintessentialQuintupletsDesktopCute-MikuNakanoOriginalCatRoomwearVer._TaikureExclusive_1.webp" alt="Miku Nakano">
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">Miku Nakano Original Cat Roomwear Ver-Gotoubun no Hanayome</h4>
+                    <p class="product-price">499.000đ</p>
+                </div>
+            </a>
+            <button class="add-to-cart-hover" data-id="sp-09">Thêm Vào Giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <a href="product-detail.html?id=sp-10" class="product-item-link">
+                <div class="product-img">
+                    <img src="Images/d18734f0-e4d9-40b1-939c-5a0aa4e4f19e_4c285e8e01864bfd9de1802d6e1c9cea_master.webp" alt="Albedo Wing">
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">Albedo Wing-Overlord-KADOKAWA</h4>
+                    <p class="product-price">1.500.000đ</p>
+                </div>
+            </a>
+            <button class="add-to-cart-hover" data-id="sp-10">Thêm Vào Giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <a href="product-detail.html?id=sp-11" class="product-item-link">
+                <div class="product-img">
+                    <img src="Images/adb106d6-ebe2-4d45-a1b2-c58042efca3f_8f8cbbb0d437475fa2217a3a4e7e35d6_master.webp" alt="Fushiguro Toji">
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">Fushiguro Toji-Jujutsu Kaisen-PowerClub Studio</h4>
+                    <p class="product-price">1.200.000đ</p>
+                </div>
+            </a>
+            <button class="add-to-cart-hover" data-id="sp-11">Thêm Vào Giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <a href="product-detail.html?id=sp-12" class="product-item-link">
+                <div class="product-img">
+                    <img src="Images/hinh-anh_2026-04-22_134049041.webp" alt="Kyoko Sakura">
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">Nendoroid Kyoko Sakura-Puella Magi Madoka Magica</h4>
+                    <p class="product-price">300.000đ</p>
+                </div>
+            </a>
+            <button class="add-to-cart-hover" data-id="sp-12">Thêm Vào Giỏ</button>
+        </div>
+    </div>
+</section>
+
+<!-- PHẦN: SẢN PHẨM GIẢM GIÁ -->
+<section class="container sale-products-section">
+    <div class="section-header">
+        <h3 class="section-title">SẢN PHẨM GIẢM GIÁ</h3>
+    </div>
+
+    <div class="product-grid">
+        <div class="product-card">
+            <a href="product-detail.html?id=sp-13" class="product-item-link">
+                <div class="product-img">
+                    <img src="Images/OverlordT-mostFigure-Albedo_TaikureExclusive_1.webp" alt="Albedo T-most">
+                    <span class="tag-sale">-48%</span>
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">Mô hình Albedo dòng T-most-Overlord-Chính hãng Taito</h4>
+                    <p class="product-price">2.350.000đ <span class="old-price">4.500.000đ</span></p>
+                </div>
+            </a>
+            <button class="add-to-cart-hover" data-id="sp-13">Thêm Vào Giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <a href="product-detail.html?id=sp-14" class="product-item-link">
+                <div class="product-img">
+                    <img src="Images/hinh-anh_2025-01-22_111315129.webp" alt="Blindbox CG vol 6">
+                    <span class="tag-sale">-10%</span>
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">Blindbox huy hiệu chủ đề CG vol 6-Honkai Impact 3rd</h4>
+                    <p class="product-price">690.000đ <span class="old-price">750.000đ</span></p>
+                </div>
+            </a>
+            <button class="add-to-cart-hover" data-id="sp-14">Thêm Vào Giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <a href="product-detail.html?id=sp-15" class="product-item-link">
+                <div class="product-img">
+                    <img src="Images/IchibanKujiJujutsuKaisenCullingGamePart2-JPrizeKenjakuMasterliseExpieceFigure_1.webp" alt="Kenjaku">
+                    <span class="tag-sale">-5%</span>
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">Mô hình Kenjaku dòng Masterlise Expiece-Jujutsu Kaisen</h4>
+                    <p class="product-price">2.375.000đ <span class="old-price">2.500.000đ</span></p>
+                </div>
+            </a>
+            <button class="add-to-cart-hover" data-id="sp-15">Thêm Vào Giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <a href="product-detail.html?id=sp-16" class="product-item-link">
+                <div class="product-img">
+                    <img src="Images/FIGURE-200643.jpg" alt="Nendoroid Rio">
+                    <span class="tag-sale">-10%</span>
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">Nendoroid Tsukatsuki Rio-Blue Archive-GSC</h4>
+                    <p class="product-price">450.000đ <span class="old-price">500.000đ</span></p>
+                </div>
+            </a>
+            <button class="add-to-cart-hover" data-id="sp-16">Thêm Vào Giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <a href="product-detail.html?id=sp-19" class="product-item-link">
+                <div class="product-img">
+                    <img src="Images/O1CN01cJUq0M1QY65bTZCqy_4611686018427380099-2-item_pic.avif" alt="Miku Linh Lan">
+                    <span class="tag-sale">-5%</span>
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">Mô hình Noodle Stopper Hatsune Miku chủ đề Tiên Nữ Linh Lan</h4>
+                    <p class="product-price">690.000đ <span class="old-price">750.000đ</span></p>
+                </div>
+            </a>
+            <button class="add-to-cart-hover" data-id="sp-19">Thêm Vào Giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <a href="product-detail.html?id=sp-20" class="product-item-link">
+                <div class="product-img">
+                    <img src="Images/FIGURE-201207.webp" alt="Revoltech Miyako">
+                    <span class="tag-sale">-8%</span>
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">Revoltech Miyako-Blue Archive-Chính hãng Kaiyodo</h4>
+                    <p class="product-price">690.000đ <span class="old-price">750.000đ</span></p>
+                </div>
+            </a>
+            <button class="add-to-cart-hover" data-id="sp-20">Thêm Vào Giỏ</button>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   PHẦN TIN TỨC 
+   ========================================================================== -->
+<section class="container news-section">
+    <div class="section-header">
+        <h3 class="section-title">TIN TỨC</h3>
+    </div>
+
+    <div class="news-grid">
+    <!-- Tin tức 1: FURYU (news-01) -->
+    <a href="blog_detail.html?id=news-01" class="news-card-link">
+        <div class="news-card">
+            <div class="news-img-wrapper">
+                <img src="Images/64786b91-9496-4495-9423-93cc39627640.jpg" alt="FURYU">
+                <div class="date-badge">
+                    <span class="day">26</span>
+                    <span class="month">6/2026</span>
+                </div>
+            </div>
+            <div class="news-content">
+                <h4 class="news-title">"[FURYU] LỊCH PHÁT HÀNH MÔ HÌNH GAMEPRIZE THÁNG 6/2026"</h4>
+                <p class="news-desc">VA Figure update list mô hình Game Prize sắp ra mắt trong tháng 6/2026 của hãng FURYU</p>
+            </div>
+        </div>
+    </a>
+
+    <!-- Tin tức 2: TAITO (news-02) -->
+    <a href="blog_detail.html?id=news-02" class="news-card-link">
+        <div class="news-card">
+            <div class="news-img-wrapper">
+                <img src="Images/f5a2b6c3-e681-433e-acc8-d671baf2aae9.jpg" alt="TAITO">
+                <div class="date-badge">
+                    <span class="day">26</span>
+                    <span class="month">6/2026</span>
+                </div>
+            </div>
+            <div class="news-content">
+                <h4 class="news-title">[TAITO] LỊCH PHÁT HÀNH MÔ HÌNH GAMEPRIZE THÁNG 8/2026</h4>
+                <p class="news-desc">VA Figure update list mô hình Game Prize sắp ra mắt trong tháng 8/2026 của hãng TAITO</p>
+            </div>
+        </div>
+    </a>
+
+    <!-- Tin tức 3: ICHIBAN KUJI (news-03) -->
+    <a href="blog_detail.html?id=news-03" class="news-card-link">
+        <div class="news-card">
+            <div class="news-img-wrapper">
+                <img src="Images/190b2744-ea86-4b2d-ba68-dc205878c7d7.jpg" alt="ICHIBAN KUJI">
+                <div class="date-badge">
+                    <span class="day">26</span>
+                    <span class="month">6/2026</span>
+                </div>
+            </div>
+            <div class="news-content">
+                <h4 class="news-title">[ICHIBAN KUJI] LỊCH PHÁT HÀNH MÔ HÌNH ICHIBAN KUJI THÁNG 10/2026</h4>
+                <p class="news-desc">VA Figure update list mô hình Ichiban Kuji sắp ra mắt trong tháng 10/2026 của hãng ICHIBAN KUJI </p>
+            </div>
+        </div>
+    </a>
+
+    <!-- Tin tức 4: BANDAI (news-04) -->
+    <a href="blog_detail.html?id=news-04" class="news-card-link">
+        <div class="news-card">
+            <div class="news-img-wrapper">
+                <img src="Images/3014ecb4-3634-46b2-9ac6-012f59a53db9.jpg" alt="BANDAI">
+                <div class="date-badge">
+                    <span class="day">26</span>
+                    <span class="month">6/2026</span>
+                </div>
+            </div>
+            <div class="news-content">
+                <h4 class="news-title">[BANDAI] LỊCH PHÁT HÀNH MÔ HÌNH GAMEPRIZE THÁNG 12/2026</h4>
+                <p class="news-desc">VA Figure update list mô hình Game Prize sắp ra mắt trong tháng 12/2026 của hãng BANDAI </p>
+            </div>
+        </div>
+    </a>
+</div>
+</section>
+<button id="backToTop" class="back-to-top" title="Lên đầu trang">
+    <i class="fa-solid fa-chevron-up"></i>
+</button>
+<!-- ==========================================================================
+   FOOTER (CHÂN TRANG)
+   ========================================================================== -->
+<footer class="footer">
+    <div class="container footer-content">
+        <!-- Cột 1: Logo và mô tả -->
+        <div class="footer-col logo-col">
+            <img src="Images\Screenshot 2026-05-01 134410.png" alt="VA FIGURE LOGO" class="footer-logo">
+            <p class="footer-desc">VA Figure đồ án website bán mô hình anime cuối kì môn học thực hành nhập môn web</p>
+        </div>
+
+        <!-- Cột 2: Thông tin liên hệ -->
+        <div class="footer-col info-col">
+            <h3>Thông tin</h3>
+            <p><strong>Địa chỉ:</strong> 180 Cao Lỗ, Phường 4, Quận 8, TP. Hồ Chí Minh</p>
+            <p><strong>Email:</strong> DH52300089@student.stu.edu.vn</p>
+            <p><strong>Điện thoại:</strong> (028) 38 505 520</p>
+        </div>
+
+        <!-- Cột 3: Bản đồ Google Maps -->
+        <div class="footer-col map-col">
+            <div class="map-embed">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.9544104258835!2d106.67525717480439!3d10.73799718940847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f62a90e5dbd%3A0x674d5126513db295!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgU8OgaSBHw7Ju!5e0!3m2!1svi!2s!4v1777710502763!5m2!1svi!2s" 
+                    width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dòng kẻ ngang và Thông tin sinh viên -->
+    <div class="footer-bottom">
+        <div class="container">
+            <hr class="footer-divider">
+            <p>Họ và tên: Trần Việt Anh | MSSV: DH52300089 | Lớp: D23_TH06 | Nhóm 1 Thứ 7 Ca 3</p>
+        </div>
+    </div>
+</footer>
+<script src="JS/main.js"></script>
+<script src="js/data.js"></script>
+<script src="JS/shop.js"></script>
+</body>
+</html>

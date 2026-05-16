@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA Figure</title>
+    <link rel="stylesheet" href="Styles\main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Images/Screenshot 2026-05-01 134410.png" alt="VA Figure">
+                </a>
+            </div>
+            
+            <!-- Thanh tìm kiếm -->
+            <!-- Chuyển div thành form hoặc bọc form bên ngoài -->
+            <form class="search-box">
+                <!-- Quan trọng: Phải có thuộc tính name="q" để lấy dữ liệu -->
+                <input type="text" name="q" placeholder="Tìm kiếm sản phẩm...">
+                
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+
+            <!-- Cụm chức năng -->
+            <div class="header-icons">
+                <div class="user-actions">
+                    <!-- Nút Đăng nhập -->
+                    <a href="login.html" class="login-link">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Đăng nhập</span>
+                    </a>
+
+                    <!-- Nút Giỏ hàng -->
+                    <a href="cart.html" class="cart-btn-link">
+                        <div class="cart-btn">
+                            <!-- Bọc icon và số 0 vào đây để làm điểm neo -->
+                            <span class="cart-icon-wrapper">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="cart-count">0</span>
+                            </span>
+                            <span>Giỏ hàng</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="sticky-header-container">
+        <nav class="main-nav">
+            <!-- Nút Menu Hamburger cho Mobile/Tablet -->
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="container" id="nav-list">
+                <!-- 1. Cửa hàng -->
+                <li><a href="shop.html?cat=Cửa Hàng">Cửa Hàng</a></li>
+
+                <!-- 2. Mục Mô Hình -->
+                <li class="has-submenu">
+                    <a href="shop.html?cat=Mô Hình">Mô Hình <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="shop.html?parent=Mô Hình&cat=Mô Hình Nữ">Mô Hình Nữ</a></li>
+                        <li><a href="shop.html?parent=Mô Hình&cat=Mô Hình Nam">Mô Hình Nam</a></li>
+                    </ul>
+                </li>
+
+                <!-- 3. Mục Nendoroid -->
+                <li class="has-submenu">
+                    <a href="shop.html?cat=Nendoroid">Nendoroid <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="shop.html?parent=Nendoroid&cat=Nendoroid Mới">Nendoroid Nữ</a></li>
+                        <li><a href="shop.html?parent=Nendoroid&cat=Nendoroid Đặt Trước">Nendoroid Nam</a></li>
+                    </ul>
+                </li>
+
+                <!-- 4. Các mục đơn khác -->
+                <li><a href="shop.html?cat=Pack Card">Pack Card</a></li>
+                <li><a href="shop.html?cat=Blind Box">Blind Box</a></li>
+                <li><a href="shop.html?cat=Phụ Kiện Khác">Phụ Kiện Khác</a></li>
+                
+                <!-- 5. Thẻ Tin Tức mới thêm vào đây -->
+                <li><a href="blogs.html">Tin Tức</a></li>
+                
+                <li><a href="lab_thuc_hanh.html">Lab Thực Hành</a></li>
+
+                <li><a href="about_us.html">Về Chúng Tôi</a></li>
+            </ul>
+        </nav>
+    </div>   
+    
+    <main class="page-shop container">
+    
+    <!-- 1. KHUNG BREADCRUMB: Tách riêng phía trên để dẫn hướng -->
+    <div class="shop-breadcrumb-box">
+    <nav class="shop-breadcrumb" id="dynamic-breadcrumb">
+        <!-- JavaScript sẽ tự động điền nội dung vào đây -->
+        <a href="index.html">Trang chủ</a> <span>/</span> Tất cả sản phẩm
+    </nav>
+</div>
+
+    <!-- 2. KHUNG LỚN DUY NHẤT: Bao trọn Bộ lọc và Danh sách sản phẩm -->
+    <div class="shop-content-box">
+        <div class="shop-wrapper">
+            
+            <!-- SIDEBAR BỘ LỌC (Bên trái) -->
+            <aside class="shop-sidebar">
+                <div class="filter-header">
+                    <h3>BỘ LỌC SẢN PHẨM</h3>
+                </div>
+
+                <!-- Nhóm: Danh mục -->
+                <div class="filter-group">
+                    <div class="group-title">
+                        <h4>Danh mục sản phẩm</h4> 
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <ul class="filter-list">
+                        <li><label><input type="checkbox"> Mô Hình Scale</label></li>
+                        <li><label><input type="checkbox"> Nendoroid</label></li>
+                        <li><label><input type="checkbox"> Blind Box</label></li>
+                    </ul>
+                </div>
+
+                <!-- Nhóm: Thương hiệu -->
+                <div class="filter-group">
+                    <div class="group-title">
+                        <h4>Thương hiệu</h4> 
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <ul class="filter-list">
+                        <li><label><input type="checkbox"> Good Smile Company</label></li>
+                        <li><label><input type="checkbox"> Alter</label></li>
+                        <li><label><input type="checkbox"> Kotobukiya</label></li>
+                    </ul>
+                </div>
+
+                <!-- Nhóm: Giá -->
+                <div class="filter-group">
+                    <div class="group-title">
+                        <h4>Lọc giá</h4> 
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <ul class="filter-list">
+                        <li><label><input type="radio" name="price"> Dưới 1 triệu</label></li>
+                        <li><label><input type="radio" name="price"> 1 triệu - 2 triệu</label></li>
+                        <li><label><input type="radio" name="price"> Trên 2 triệu</label></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- NỘI DUNG CHÍNH (Bên phải) -->
+            <section class="shop-main">
+                <div class="shop-toolbar">
+                    <h2 id="shop-page-title">TẤT CẢ SẢN PHẨM</h2>
+                    <div class="toolbar-actions">
+                        <select>
+                            <option>Thứ tự mặc định</option>
+                            <option>Giá tăng dần</option>
+                            <option>Giá giảm dần</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Lưới sản phẩm: 4 sản phẩm/hàng -->
+                <div class="shop-grid">
+                    <!-- Sản phẩm 1 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nữ">
+                        <a href="product-detail.html?id=sp-01">
+                            <div class="item-image"><img src="Images/51RPkzAjDML._AC_SX679_.jpg" alt="Mô hình"></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Mô hình Shimoe Koharu 22cm PVC</h3>
+                                <div class="item-price">180.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 2 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nữ">
+                        <a href="product-detail.html?id=sp-02">
+                            <div class="item-image"><img src="Images\s-l960.webp" alt="Mô hình"></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Mô hình Honkai: Star Rail Jingliu 38cm PVC</h3>
+                                <div class="item-price">550.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 3 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nữ">
+                        <a href="product-detail.html?id=sp-03">
+                            <div class="item-image"><img src="Images\582c56fc8e1e1b244b32e3eab022389c98c4ad26.webp" alt="Mô hình"></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Hatsune Miku ver Outfit Sakura-Vocaloid-Chính hãng TAITO</h3>
+                                <div class="item-price">500.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 4 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nữ">
+                        <a href="product-detail.html?id=sp-04">
+                            <div class="item-image"><img src="Images\OnePieceBattleRecordCollectionExtra-CharlotteLinlin01.webp" alt="Mô hình"></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Mô hình Charlotte Linlin dòng Battle Record Collection Extra-One Piece-Chính hãng Banpresto</h3>
+                                <div class="item-price">950.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 5 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nữ">
+                        <a href="product-detail.html?id=sp-05">
+                            <div class="item-image"><img src="Images\hinh-anh_2026-04-30_150914867-e1777536574948.webp" alt="Mô hình"></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Mô hình Albedo ver Pirate dòng Coreful-Overlord-Chính hãng Taito</h3>
+                                <div class="item-price">950.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 6 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nữ">
+                        <a href="product-detail.html?id=sp-06">
+                            <div class="item-image"><img src="Images\TheQuintessentialQuintupletsDesktopCuteFigure-NinoNakanoOriginalCatRoomWearVer._TaikureExclusive_1.webp" alt="Mô hình"></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Mô hình Desktop Cute Nino Nakano Original Cat Room Wear Ver-Gotoubun no Hanayome-Chính hãng Taito</h3>
+                                <div class="item-price">750.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 7 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nữ">
+                        <a href="product-detail.html?id=sp-07">
+                            <div class="item-image"><img src="Images\hinh-anh_2026-02-17_170512435-e1771322733808.webp" alt="Mô hình"></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Trio-Try-iT Hatsune Miku chủ đề Kuromi SnowMiku-Vocaloid-Chính hãng Furyu</h3>
+                                <div class="item-price">590.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 8 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nam">
+                        <a href="product-detail.html?id=sp-08">
+                            <div class="item-image"><img src="Images\hinh-anh_2026-04-23_194413592-e1776948276631.webp" alt="Mô hình"><span class="tag-sale">-20%</span></div>
+                            <div class="item-info">
+                                <h3 class="item-title">S.H.Figuarts Portgas D. Ace ver Marineford Summit Battle-One Piece-Chính hãng Tamashii Nations</h3>
+                                <div class="item-price">1.200.000đ <span class="old-price">1.500.000đ</span></div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 9 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nữ">
+                        <a href="product-detail.html?id=sp-09">
+                            <div class="item-image"><img src="Images\TheQuintessentialQuintupletsDesktopCute-MikuNakanoOriginalCatRoomwearVer._TaikureExclusive_1.webp" alt="Mô hình"></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Miku Nakano Original Cat Roomwear Ver-Gotoubun no Hanayome-Chính hãng Taito</h3>
+                                <div class="item-price">499.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 10 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nữ">
+                        <a href="product-detail.html?id=sp-10">
+                            <div class="item-image"><img src="Images\d18734f0-e4d9-40b1-939c-5a0aa4e4f19e_4c285e8e01864bfd9de1802d6e1c9cea_master.webp" alt="Mô hình"></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Albedo Wing-Overlord-KADOKAWA</h3>
+                                <div class="item-price">1.500.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 11 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nam">
+                        <a href="product-detail.html?id=sp-11">
+                            <div class="item-image"><img src="Images\adb106d6-ebe2-4d45-a1b2-c58042efca3f_8f8cbbb0d437475fa2217a3a4e7e35d6_master.webp" alt="Mô hình"></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Fushiguro Toji-Jujutsu Kaisen-PowerClub Studio</h3>
+                                <div class="item-price">1.200.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 12 -->
+                    <div class="shop-item" data-cat="Nendoroid" data-sub="Nendoroid Nữ">
+                        <a href="product-detail.html?id=sp-12">
+                            <div class="item-image"><img src="Images\hinh-anh_2026-04-22_134049041.webp" alt="Mô hình"></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Nendoroid Kyoko Sakura-Puella Magi Madoka Magica Walpurgisnacht: Rising-Chính hãng Good Smile Company</h3>
+                                <div class="item-price">300.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 13 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nữ">
+                        <a href="product-detail.html?id=sp-13">
+                            <div class="item-image"><img src="Images\OverlordT-mostFigure-Albedo_TaikureExclusive_1.webp" alt="Mô hình"><span class="tag-sale">-48%</span></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Mô hình Albedo dòng T-most-Overlord-Chính hãng Taito</h3>
+                                <div class="item-price">2.350.000đ <span class="old-price">4.500.000đ</span></div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 14 -->
+                    <div class="shop-item" data-cat="Blind Box">
+                        <a href="product-detail.html?id=sp-14">
+                            <div class="item-image"><img src="Images\hinh-anh_2025-01-22_111315129.webp" alt="Mô hình"><span class="tag-sale">-10%</span></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Blindbox huy hiệu chủ đề CG vol 6-Honkai Impact 3rd-Chính hãng Mihoyo</h3>
+                                <div class="item-price">690.000đ<span class="old-price">750.000đ</span></div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 15 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nam">
+                        <a href="product-detail.html?id=sp-15">
+                            <div class="item-image"><img src="Images\IchibanKujiJujutsuKaisenCullingGamePart2-JPrizeKenjakuMasterliseExpieceFigure_1.webp" alt="Mô hình"><span class="tag-sale">-5%</span></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Mô hình Kenjaku dòng Masterlise Expiece-Jujutsu Kaisen Culling Game Part 2-Chính hãng Bandai</h3>
+                                <div class="item-price">2.375.000đ <span class="old-price">2.500.000đ</span></div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 16 -->
+                    <div class="shop-item" data-cat="Nendoroid" data-sub="Nendoroid Nữ">
+                        <a href="product-detail.html?id=sp-16">
+                            <div class="item-image"><img src="Images\FIGURE-200643.jpg" alt="Mô hình"><span class="tag-sale">-10%</span></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Nendoroid Tsukatsuki Rio-Blue Archive-Chính hãng Good Smile Company</h3>
+                                <div class="item-price">450.000đ <span class="old-price">500.000đ</span></div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 17 -->
+                    <div class="shop-item" data-cat="Nendoroid" data-sub="Nendoroid Nam">
+                        <a href="product-detail.html?id=sp-17">
+                            <div class="item-image"><img src="Images\20241208_lu6NSQoxf6.jpeg" alt="Mô hình"><span class="tag-sale">-10%</span></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Mô Hình Nendoroid Doll Venti</h3>
+                                <div class="item-price">810.000đ <span class="old-price">900.000đ</span></div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 18 -->
+                    <div class="shop-item" data-cat="Nendoroid" data-sub="Nendoroid Nam">
+                        <a href="product-detail.html?id=sp-18">
+                            <div class="item-image"><img src="Images\O1CN01gseIF51fEbNnyNoMd_!!4611686018427383383-0-item_pic.webp" alt="Mô hình"></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Mô Hình Nendoroid Honkai: Star Rail – Sunday</h3>
+                                <div class="item-price">450.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 19 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nữ">
+                        <a href="product-detail.html?id=sp-19">
+                            <div class="item-image"><img src="Images\O1CN01cJUq0M1QY65bTZCqy_4611686018427380099-2-item_pic.avif" alt="Mô hình"><span class="tag-sale">-5%</span></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Mô hình Noodle Stopper Hatsune Miku chủ đề Tiên Nữ Linh Lan-Vocaloid-Chính hãng Furyu</h3>
+                                <div class="item-price">690.000đ <span class="old-price">750.000đ</span></div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 20 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nữ">
+                        <a href="product-detail.html?id=sp-20">
+                            <div class="item-image"><img src="Images\FIGURE-201207.webp" alt="Mô hình"><span class="tag-sale">-8%</span></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Revoltech Miyako-Blue Archive-Chính hãng Kaiyodo</h3>
+                                <div class="item-price">690.000đ <span class="old-price">750.000đ</span></div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 21 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nữ">
+                        <a href="product-detail.html?id=sp-21">
+                            <div class="item-image"><img src="Images\4019ff2496ab3eaa534f3c3846038545-1684084209524.jpg" alt="Mô hình"></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Mô hình tĩnh Anime Figure Saber Alter Fate/Grand Order - Xinhao</h3>
+                                <div class="item-price">1.200.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 22 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nữ">
+                        <a href="product-detail.html?id=sp-22">
+                            <div class="item-image"><img src="Images\hinh-anh_2025-08-20_122315268.webp" alt="Mô hình"></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Mô hình Trio-Try-iT Elaina – Majo no Tabitabi – Chính hãng Furyu</h3>
+                                <div class="item-price">750.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 23 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nữ">
+                        <a href="product-detail.html?id=sp-23">
+                            <div class="item-image"><img src="Images\hr_apex16188.webp" alt="Mô hình"></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Zenless Zone Zero - Ellen Joe - figure 1/7</h3>
+                                <div class="item-price">650.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 24 -->
+                    <div class="shop-item" data-cat="Mô Hình" data-sub="Mô Hình Nữ">
+                        <a href="product-detail.html?id=sp-24">
+                            <div class="item-image"><img src="Images\0a0e3424-4e4b-416b-af8e-e02d65351c34-jpeg-1745835082334.webp" alt="Mô hình"></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Figure Yatogami Tohka - Date A Live IV</h3>
+                                <div class="item-price">900.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 25 -->
+                    <div class="shop-item" data-cat="Nendoroid" data-sub="Nendoroid Nữ">
+                        <a href="product-detail.html?id=sp-25">
+                            <div class="item-image"><img src="Images\Image_0_2411081231033754.webp" alt="Mô hình"></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Genshin Impact - Nendoroid Raiden Shogun</h3>
+                                <div class="item-price">300.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 26 -->
+                    <div class="shop-item" data-cat="Nendoroid" data-sub="Nendoroid Nữ">
+                        <a href="product-detail.html?id=sp-26">
+                            <div class="item-image"><img src="Images\nendoroid-character-vocal-series-01-hatsune-miku-rabbit-hole-ver-good-smile-company-figurine-yattajapan-1.webp" alt="Mô hình"></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Nendoroid Character Vocal Series 01 Hatsune Miku: Rabbit Hole Ver.</h3>
+                                <div class="item-price">300.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 27 -->
+                    <div class="shop-item" data-cat="Nendoroid" data-sub="Nendoroid Nữ">
+                        <a href="product-detail.html?id=sp-27">
+                            <div class="item-image"><img src="Images\51orYJAW6DL._AC_.jpg" alt=""></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Kimetsu no Yaiba: Shinobu Kocho Nendoroid Swacchao!</h3>
+                                <div class="item-price">300.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 28 -->
+                    <div class="shop-item" data-cat="Blind Box">
+                        <a href="product-detail.html?id=sp-28">
+                            <div class="item-image"><img src="Images\E1087325_1_1920x1920.jpg" alt=""></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Haikyu!! - YuMe Anime Blind Box Figure</h3>
+                                <div class="item-price">350.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 29 -->
+                    <div class="shop-item" data-cat="Blind Box">
+                        <a href="product-detail.html?id=sp-29">
+                            <div class="item-image"><img src="Images\61Cy2CxghBL._AC_SX679_.jpg" alt=""></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Jujutsu Kaisen Mystery Blind Bag, Version 1 - 3 Pack - Mini 2</h3>
+                                <div class="item-price">200.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 30 -->
+                    <div class="shop-item" data-cat="Pack Card">
+                        <a href="product-detail.html?id=sp-30">
+                            <div class="item-image"><img src="Images\op_baf86e4833df42518779e492cd36b789_grande.jpg" alt=""></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Chính Hãng BANDAI - Pack nhân phẩm, gói thẻ nhân phẩm anime One Piece TCG</h3>
+                                <div class="item-price">400.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 31 -->
+                    <div class="shop-item" data-cat="Phụ Kiện Khác">
+                        <a href="product-detail.html?id=sp-31">
+                            <div class="item-image"><img src="Images\Nhoi-Bong-Frieren-Beyond-Journey-s-End-Mascot-Plush-Chibigurumi-Vol-1-Banpresto--1.jpg" alt=""></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Nhồi Bông Frieren: Beyond Journey's End</h3>
+                                <div class="item-price">350.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sản phẩm 32 -->
+                    <div class="shop-item" data-cat="Phụ Kiện Khác">
+                        <a href="product-detail.html?id=sp-32">
+                            <div class="item-image"><img src="Images\20240801_9EgqynyUxd.jpeg" alt=""></div>
+                            <div class="item-info">
+                                <h3 class="item-title">Cốc Đổi Màu Detective Conan</h3>
+                                <div class="item-price">150.000đ</div>
+                                <div class="hover-button-wrapper"><button class="add-to-cart-hover">Thêm Vào Giỏ</button></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+    <!-- KẾT THÚC VÙNG SHOP -->
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <!-- Cột 1: Logo và mô tả -->
+            <div class="footer-col logo-col">
+                <img src="Images\Screenshot 2026-05-01 134410.png" alt="VA FIGURE LOGO" class="footer-logo">
+                <p class="footer-desc">VA Figure đồ án website bán mô hình anime cuối kì môn học thực hành nhập môn web</p>
+            </div>
+
+            <!-- Cột 2: Thông tin liên hệ -->
+            <div class="footer-col info-col">
+                <h3>Thông tin</h3>
+                <p><strong>Địa chỉ:</strong> 180 Cao Lỗ, Phường 4, Quận 8, TP. Hồ Chí Minh</p>
+                <p><strong>Email:</strong> DH52300089@student.stu.edu.vn</p>
+                <p><strong>Điện thoại:</strong> (028) 38 505 520</p>
+            </div>
+
+            <!-- Cột 3: Bản đồ Google Maps -->
+            <div class="footer-col map-col">
+                <div class="map-embed">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.9544104258835!2d106.67525717480439!3d10.73799718940847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f62a90e5dbd%3A0x674d5126513db295!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgU8OgaSBHw7Ju!5e0!3m2!1svi!2s!4v1777710502763!5m2!1svi!2s" 
+                        width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dòng kẻ ngang và Thông tin sinh viên -->
+        <div class="footer-bottom">
+            <div class="container">
+                <hr class="footer-divider">
+                <p>Họ và tên: Trần Việt Anh | MSSV: DH52300089 | Lớp: D23_TH06 | Nhóm 1 Thứ 7 Ca 3</p>
+            </div>
+        </div>
+    </footer>
+<button id="backToTop" class="back-to-top" title="Lên đầu trang">
+    <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<!-- Nạp main.js để chạy Menu 3 gạch và các hiệu ứng chung -->
+<script src="JS/main.js"></script>
+<script src="js/data.js"></script>
+
+<!-- Cuối cùng là nạp shop.js để xử lý riêng cho trang này -->
+<script src="JS/shop.js"></script>
+</body>

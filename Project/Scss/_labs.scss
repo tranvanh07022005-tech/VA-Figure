@@ -1,0 +1,88 @@
+/* ============================================================
+   FILE: _LABS.SCSS (Chỉ chứa giao diện danh sách Lab)
+   ============================================================ */
+
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // 4 cột trên PC
+    gap: 20px;
+    width: 100%;
+    padding: 10px 0;
+
+    @media (max-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr); // 3 cột trên tablet lớn
+    }
+
+    @media (max-width: 992px) {
+        grid-template-columns: repeat(2, 1fr); // 2 cột trên tablet nhỏ
+    }
+
+    @media (max-width: 576px) {
+        grid-template-columns: 1fr; // 1 cột duy nhất trên điện thoại
+    }
+}
+
+.lab-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; // Đẩy nút "Xem chi tiết" xuống đáy card
+    min-height: 250px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    h3 {
+        font-size: 18px;
+        color: #333333;
+        margin: 0 0 15px 0;
+        font-weight: 600;
+    }
+}
+
+.lab-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+
+    li {
+        margin-bottom: 8px;
+
+        a {
+            text-decoration: none;
+            color: #666666;
+            font-size: 14px;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: #E0AD3B;
+            }
+        }
+    }
+}
+
+.btn-lab-view {
+    display: block;          
+    text-align: center;      
+    text-decoration: none;
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #218838;
+    }
+}

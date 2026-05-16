@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm danh mục - VA Figure Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Styles/main.css">
+</head>
+<body class="admin-body">
+
+    <header class="admin-topbar">
+        <div class="topbar-left">
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="topbar-logo">
+                <a href="index.html"><img src="Images/Screenshot 2026-05-01 134410.png" alt="VA Figure"></a>
+            </div>
+        </div>
+        <div class="header-user">
+            <span>Xin chào, <strong>admin</strong></span>
+            <div class="user-avatar">V</div>
+        </div>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <div class="admin-main-layout">
+        <aside class="admin-sidebar">
+            <nav class="admin-nav">
+                <div class="nav-group">CHUNG</div>
+                <a href="dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="add_product.html" class="nav-item"><i class="fas fa-plus-square"></i> Thêm sản phẩm</a>
+                <a href="add_category.html" class="nav-item active"><i class="fas fa-folder-plus"></i> Thêm danh mục</a>
+                <a href="add_blog.html" class="nav-item"><i class="fas fa-folder-plus"></i> Thêm tin tức</a>
+
+                <div class="nav-group">QUẢN LÍ</div>
+                <a href="dashboard_product_list.html" class="nav-item"><i class="fas fa-box"></i> Sản phẩm</a>
+                <a href="dashboard_category_list.html" class="nav-item"><i class="fas fa-link"></i> Danh mục</a>
+                <a href="dashboard_blog_list.html" class="nav-item "><i class="fas fa-tags"></i> Blog</a>
+                <a href="#" class="nav-item"><i class="fas fa-users"></i> Người dùng</a>
+                <a href="#" class="nav-item"><i class="fas fa-shopping-cart"></i> Đơn hàng</a>
+            </nav>
+        </aside>
+
+        <main class="admin-content">
+            <div class="product-form-container">
+                <div class="form-card main-form">
+                    <h3 class="form-title">Thêm danh mục</h3>
+                    
+                    <div class="input-group">
+                        <label>Tên danh mục:</label>
+                        <input type="text" id="cate-name" placeholder="Nhập tên danh mục (VD: Mô hình Resin, Nendoroid)...">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Mô tả danh mục:</label>
+                        <div class="rich-editor-wrapper">
+                            <div class="editor-toolbar">
+                                <button type="button"><i class="fas fa-bold"></i></button>
+                                <button type="button"><i class="fas fa-italic"></i></button>
+                                <button type="button"><i class="fas fa-link"></i></button>
+                                <button type="button"><i class="fas fa-list"></i></button>
+                            </div>
+                            <textarea id="cate-desc" placeholder="Mô tả sơ lược về danh mục này..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-cancel">Huỷ</button>
+                        <button type="submit" class="btn-save">Lưu</button>
+                    </div>
+                </div>
+
+                <div class="form-card image-upload-card">
+                    <h3 class="form-title">Hình ảnh</h3>
+                    <div class="upload-area" id="drop-area">
+                        <input type="file" id="fileElem" accept="image/*" hidden onchange="handleFiles(this.files)">
+                        <div class="upload-content" onclick="document.getElementById('fileElem').click()">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span class="btn-upload">Tải ảnh lên</span>
+                            <p>Kéo thả hoặc click để chọn ảnh</p>
+                        </div>
+                        <div id="gallery"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="JS/product_management.js"></script>
+</body>
+</html>

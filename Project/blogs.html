@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA Figure</title>
+    <link rel="stylesheet" href="Styles\main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Images/Screenshot 2026-05-01 134410.png" alt="VA Figure">
+                </a>
+            </div>
+            
+            <!-- Thanh tìm kiếm -->
+            <!-- Chuyển div thành form hoặc bọc form bên ngoài -->
+            <form class="search-box">
+                <!-- Quan trọng: Phải có thuộc tính name="q" để lấy dữ liệu -->
+                <input type="text" name="q" placeholder="Tìm kiếm sản phẩm...">
+                
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+
+            <!-- Cụm chức năng -->
+            <div class="header-icons">
+                <div class="user-actions">
+                    <!-- Nút Đăng nhập -->
+                    <a href="login.html" class="login-link">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Đăng nhập</span>
+                    </a>
+
+                    <!-- Nút Giỏ hàng -->
+                    <a href="cart.html" class="cart-btn-link">
+                        <div class="cart-btn">
+                            <!-- Bọc icon và số 0 vào đây để làm điểm neo -->
+                            <span class="cart-icon-wrapper">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="cart-count">0</span>
+                            </span>
+                            <span>Giỏ hàng</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="sticky-header-container">
+        <nav class="main-nav">
+            <!-- Nút Menu Hamburger cho Mobile/Tablet -->
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="container" id="nav-list">
+                <!-- 1. Cửa hàng -->
+                <li><a href="shop.html?cat=Cửa Hàng">Cửa Hàng</a></li>
+
+                <!-- 2. Mục Mô Hình -->
+                <li class="has-submenu">
+                    <a href="shop.html?cat=Mô Hình">Mô Hình <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="shop.html?parent=Mô Hình&cat=Mô Hình Nữ">Mô Hình Nữ</a></li>
+                        <li><a href="shop.html?parent=Mô Hình&cat=Mô Hình Nam">Mô Hình Nam</a></li>
+                    </ul>
+                </li>
+
+                <!-- 3. Mục Nendoroid -->
+                <li class="has-submenu">
+                    <a href="shop.html?cat=Nendoroid">Nendoroid <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="shop.html?parent=Nendoroid&cat=Nendoroid Mới">Nendoroid Nữ</a></li>
+                        <li><a href="shop.html?parent=Nendoroid&cat=Nendoroid Đặt Trước">Nendoroid Nam</a></li>
+                    </ul>
+                </li>
+
+                <!-- 4. Các mục đơn khác -->
+                <li><a href="shop.html?cat=Pack Card">Pack Card</a></li>
+                <li><a href="shop.html?cat=Blind Box">Blind Box</a></li>
+                <li><a href="shop.html?cat=Phụ Kiện Khác">Phụ Kiện Khác</a></li>
+                
+                <!-- 5. Thẻ Tin Tức mới thêm vào đây -->
+                <li><a href="blogs.html">Tin Tức</a></li>
+                
+                <!-- 6. Liên hệ -->
+                <li><a href="lab_thuc_hanh.html">Lab Thực Hành</a></li>
+
+                <li><a href="about_us.html">Về Chúng Tôi</a></li>
+            </ul>
+        </nav>
+    </div>
+  <main class="news-page-wrapper">
+    <div class="container">
+        
+        <nav class="breadcrumb-box">
+            <a href="index.html">Trang chủ</a> <span>/</span> Tin tức
+        </nav>
+
+        <section class="news-main-box">
+            <h2 class="news-title-header">Tin tức</h2>
+            <div class="news-list">
+                <!-- BÀI VIẾT 1: ẢNH TRÁI - CHỮ PHẢI -->
+<article class="news-item">
+    <div class="news-image">
+        <img src="Images\64786b91-9496-4495-9423-93cc39627640.jpg" alt="FURYU">
+    </div>
+    <div class="news-info">
+        <h3 class="news-item-title">
+            <a href="blog_detail.html?id=news-01">[FURYU] LỊCH PHÁT HÀNH MÔ HÌNH GAMEPRIZE THÁNG 6/2026</a>
+        </h3>
+        <p class="news-item-meta">Đăng bởi: <strong>Trần Việt Anh</strong> - 18/6/2026</p>
+        <p class="news-item-excerpt">
+            FuRyu vừa chính thức công bố danh sách những mẫu mô hình Game Prize cực hot sẽ được phát hành tại Nhật Bản vào tháng 6/2026 tới đây..."
+        </p>
+    </div>
+</article>
+
+<!-- BÀI VIẾT 2: CHỮ TRÁI - ẢNH PHẢI (Sử dụng class 'reverse') -->
+<article class="news-item reverse">
+    <div class="news-image">
+        <img src="Images\f5a2b6c3-e681-433e-acc8-d671baf2aae9.jpg" alt="TAITO">
+    </div>
+    <div class="news-info">
+        <h3 class="news-item-title">
+            <!-- CẬP NHẬT ID news-02 -->
+            <a href="blog_detail.html?id=news-02">[TAITO] LỊCH PHÁT HÀNH MÔ HÌNH GAMEPRIZE THÁNG 8/2026</a>
+        </h3>
+        <p class="news-item-meta">Đăng bởi: <strong>Trần Việt Anh</strong> - 16/8/2026</p>
+        <p class="news-item-excerpt">
+            Taito vừa hâm nóng cộng đồng sưu tập bằng lịch phát hành tháng 8/2026 với những cái tên không thể hot hơn trong dòng Coreful và AMP+...
+        </p>
+    </div>
+</article>
+
+<!-- PHẦN 2: LƯỚI TIN TỨC NHỎ -->
+<div class="news-small-grid">
+    <!-- Card 1: news-03 -->
+    <article class="news-card">
+        <div class="card-thumb">
+            <img src="Images\190b2744-ea86-4b2d-ba68-dc205878c7d7.jpg" alt="ICHIBAN KUJI">
+            <div class="date-badge">
+                <span class="day">01</span>
+                <span class="month">10/2026</span>
+            </div>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title"><a href="blog_detail.html?id=news-03">[ICHIBAN KUJI] LỊCH PHÁT HÀNH MÔ HÌNH ICHIBAN KUJI THÁNG 5/2025</a></h4>
+            <p class="card-excerpt">Tháng 10/2026 sẽ là bữa tiệc của các tín đồ Ichiban Kuji với sự trở lại của các giải thưởng cực phẩm từ vũ trụ "Dragon Ball" và "One Piece"...</p>
+        </div>
+    </article>
+
+    <!-- Card 2: news-04 -->
+    <article class="news-card">
+        <div class="card-thumb">
+            <img src="Images\3014ecb4-3634-46b2-9ac6-012f59a53db9.jpg" alt="BANDAI">
+            <div class="date-badge">
+                <span class="day">12</span>
+                <span class="month">08/2026</span>
+            </div>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title"><a href="blog_detail.html?id=news-04">[BANDAI] LỊCH PHÁT HÀNH MÔ HÌNH GAMEPRIZE THÁNG 5/2025</a></h4>
+            <p class="card-excerpt">Bandai Spirits vừa hé lộ danh sách mô hình Prize cho dịp cuối năm 2026, tập trung mạnh vào các dòng Vibration Stars và DXF nổi tiếng...</p>
+        </div>
+    </article>
+
+    <!-- Card 3: news-05 -->
+    <article class="news-card">
+        <div class="card-thumb">
+            <img src="Images\march-comes-in-like-a-lion-2-1777534569263449523725-0-0-1200-1920-crop-17775359298361359069871.webp" alt="Taito">
+        </div>  
+        <div class="card-body">
+            <h4 class="card-title"><a href="blog_detail.html?id=news-05">Mười năm sau năm 2016: Những tác phẩm anime vẫn giữ nguyên sức hút</a></h4>
+            <p class="card-excerpt">Nhìn lại năm 2016 - một năm bản lề với những siêu phẩm như "Re:Zero", "Yuri on Ice" và "March Comes in Like a Lion" vẫn đang gây bão cho tới nay...</p>
+        </div>
+    </article>
+
+    <!-- Card 4: news-06 -->
+    <article class="news-card">
+        <div class="card-thumb">
+            <img src="Images\kb-teaser-en-17774504080891011386714-0-0-764-1221-crop-17774504341071747455539.webp" alt="Taito">
+        </div>
+        <div class="card-body">
+            <h4 class="card-title"><a href="blog_detail.html?id=news-06">Trailer 'Kagurabachi' cán mốc 6 triệu lượt xem sau 24 giờ</a></h4>
+            <p class="card-excerpt">Hiện tượng Kagurabachi vừa chứng minh sức hút khủng khiếp khi trailer anime đầu tiên phá kỷ lục lượt xem trên toàn cầu chỉ trong một ngày</p>
+        </div>
+    </article>
+
+    <!-- Card 5: news-07 -->
+    <article class="news-card">
+        <div class="card-thumb">
+            <img src="Images\crunchyroll-02-1760585106935962588350.webp" alt="Taito">
+        </div>
+        <div class="card-body">
+            <h4 class="card-title"><a href="blog_detail.html?id=news-07">Chiến dịch Ani-May 2026: Crunchyroll chiếu miễn phí Solo Leveling</a></h4>
+            <p class="card-excerpt">Crunchyroll vừa công bố chiến dịch Ani-May 2026 với ưu đãi cực sốc: chiếu miễn phí toàn bộ phần 1 của "Solo Leveling" cho người dùng...</p>
+        </div>
+    </article>
+
+    <!-- Card 6: news-08 -->
+    <article class="news-card">
+        <div class="card-thumb">
+            <img src="Images\3-1777279542357638045461-0-33-1053-1718-crop-17772807258241153683813.webp" alt="Taito">
+        </div>
+        <div class="card-body">
+            <h4 class="card-title"><a href="blog_detail.html?id=news-08">My Hero Academia hé lộ tập đặc biệt: Lời chào sau cuối cho hành trình 10 năm</a></h4>
+            <p class="card-excerpt">Sau khi manga kết thúc, My Hero Academia vừa tung ra teaser cho tập anime đặc biệt nhằm tri ân chặng đường 10 năm của lớp 1-A...</p>
+        </div>
+    </article>
+
+    <!-- Card 7: news-09 -->
+    <article class="news-card">
+        <div class="card-thumb">
+            <img src="Images\anh-man-hinh-2026-04-26-luc-14-59-32-1777190381679936023752-0-20-846-1374-crop-177719040033460684114.webp" alt="Taito">
+        </div>
+        <div class="card-body">
+            <h4 class="card-title"><a href="blog_detail.html?id=news-09">5 điều fan cần biết trước khi Black Clover sắp khép lại hành trình</a></h4>
+            <p class="card-excerpt">Black Clover đang tiến rất gần tới hồi kết, dưới đây là những điều quan trọng fan cần chuẩn bị trước khi chia tay vương quốc Clover...</p>
+        </div>
+    </article>
+</div>
+</main>
+<footer class="footer">
+    <div class="container footer-content">
+        <!-- Cột 1: Logo và mô tả -->
+        <div class="footer-col logo-col">
+            <img src="Images\Screenshot 2026-05-01 134410.png" alt="VA FIGURE LOGO" class="footer-logo">
+            <p class="footer-desc">VA Figure đồ án website bán mô hình anime cuối kì môn học thực hành nhập môn web</p>
+        </div>
+
+        <!-- Cột 2: Thông tin liên hệ -->
+        <div class="footer-col info-col">
+            <h3>Thông tin</h3>
+            <p><strong>Địa chỉ:</strong> 180 Cao Lỗ, Phường 4, Quận 8, TP. Hồ Chí Minh</p>
+            <p><strong>Email:</strong> DH52300089@student.stu.edu.vn</p>
+            <p><strong>Điện thoại:</strong> (028) 38 505 520</p>
+        </div>
+
+        <!-- Cột 3: Bản đồ Google Maps -->
+        <div class="footer-col map-col">
+            <div class="map-embed">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.9544104258835!2d106.67525717480439!3d10.73799718940847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f62a90e5dbd%3A0x674d5126513db295!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgU8OgaSBHw7Ju!5e0!3m2!1svi!2s!4v1777710502763!5m2!1svi!2s" 
+                    width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dòng kẻ ngang và Thông tin sinh viên -->
+    <div class="footer-bottom">
+        <div class="container">
+            <hr class="footer-divider">
+            <p>Họ và tên: Trần Việt Anh | MSSV: DH52300089 | Lớp: D23_TH06 | Nhóm 1 Thứ 7 Ca 3</p>
+        </div>
+    </div>
+</footer>
+<script src="JS/main.js"></script>
+<script src="JS/data.js"></script>
+
+</body>
+</html>

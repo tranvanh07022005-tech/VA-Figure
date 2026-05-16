@@ -1,0 +1,288 @@
+// ----------------------------------------------------
+// TRANG CỬA HÀNG - PHONG CÁCH CHUYÊN NGHIỆP TỔNG THỂ
+// ----------------------------------------------------
+.page-shop {
+    background-color: #f4f7f9;
+    padding: 30px 0 80px;
+    display: block;
+
+    // 1. Khung Breadcrumb riêng biệt làm điểm nhấn
+    .shop-breadcrumb-box {
+        background: #fff;
+        padding: 15px 25px;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        
+        .shop-breadcrumb {
+            font-size: 14px;
+            color: #777;
+            a {
+                color: #333;
+                text-decoration: none;
+                font-weight: 600;
+                &:hover { color: $primary-color; }
+            }
+            span { margin: 0 10px; color: #ccc; }
+        }
+    }
+
+    // 2. KHUNG LỚN BAO TRỌN BỘ LỌC VÀ SẢN PHẨM
+    .shop-content-box {
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        overflow: hidden; // Đảm bảo bo góc ăn vào nội dung con
+    }
+
+    .shop-wrapper {
+        display: flex;
+        gap: 0; // Xóa khoảng cách để dùng border ngăn cách
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+        }
+    }
+
+    // 3. Cột Sidebar (Nằm bên trái trong khung lớn)
+    .shop-sidebar {
+        flex: 0 0 280px;
+        width: 100%;
+        padding: 30px;
+        border-right: 1px solid #f0f0f0; // Đường ngăn cách dọc
+
+        @media (max-width: 1024px) {
+            border-right: none;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .filter-header {
+            margin-bottom: 25px;
+            h3 { font-size: 17px; color: #333; font-weight: 700; text-transform: uppercase; }
+        }
+
+        .filter-group {
+            border-top: 1px solid #f3f4f6;
+            padding: 15px 0;
+            &:first-child { border-top: none; }
+
+            .group-title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-weight: 700;
+                font-size: 15px;
+                color: #222;
+                cursor: pointer;
+                
+                i { 
+                    font-size: 12px; 
+                    color: $primary-color; 
+                    transition: transform 0.3s ease; 
+                }
+            }
+
+            .filter-list {
+                display: none; // MẶC ĐỊNH THU LẠI
+                list-style: none;
+                margin-top: 15px;
+                
+                li {
+                    margin-bottom: 12px;
+                    label {
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        font-size: 14px;
+                        color: #555;
+                        cursor: pointer;
+                        &:hover { color: $primary-color; }
+                        input { accent-color: $primary-color; width: 16px; height: 16px; }
+                    }
+                }
+            }
+
+            &.active {
+                .filter-list { display: block; }
+                .group-title i { transform: rotate(45deg); }
+            }
+        }
+    }
+
+    // 4. Cột Nội dung chính (Nằm bên phải trong khung lớn)
+    .shop-main {
+        flex: 1;
+        width: 100%;
+        padding: 30px;
+
+        .shop-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #f0f0f0; // Đường kẻ ngang dưới tiêu đề
+
+            h2 { font-size: 18px; color: #333; font-weight: 800; }
+            .toolbar-actions {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                .result-count { font-size: 13px; color: #888; }
+                select {
+                    padding: 8px 12px;
+                    border-radius: 6px;
+                    background: #60a5fa;
+                    color: white;
+                    border: none;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    // 5. Lưới sản phẩm (Luôn cố định 4 cột trên PC)
+    .shop-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); // 4 CỘT
+        gap: 20px;
+
+        @media (max-width: 1300px) { grid-template-columns: repeat(3, 1fr); }
+        @media (max-width: 768px) { grid-template-columns: repeat(2, 1fr); }
+        @media (max-width: 480px) { grid-template-columns: 1fr; }
+
+                .shop-item {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 12px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+
+            a {
+                text-decoration: none !important;
+                color: inherit;
+                display: block;
+                &:hover {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+
+            .item-image {
+                position: relative;
+                aspect-ratio: 1/1;
+                background: #f9f9f9;
+                border-radius: 6px;
+                overflow: hidden;
+                margin-bottom: 15px;
+                img { width: 100%; height: 100%; object-fit: contain; padding: 5px; }
+
+                .badge-order {
+                    position: absolute;
+                    top: 15px; left: -25px;
+                    background: #ff7675;
+                    color: white;
+                    padding: 6px 30px;
+                    font-size: 11px;
+                    font-weight: 800;
+                    transform: rotate(-45deg);
+                    z-index: 2;
+                }
+
+                .tag-sale {
+                    position: absolute;
+                    top: 10px; right: 10px;
+                    background: #60a5fa;
+                    color: white;
+                    padding: 4px 10px;
+                    border-radius: 5px;
+                    font-size: 12px;
+                    font-weight: 700;
+                    z-index: 2;
+                }
+            }
+
+            
+            .item-info {
+                padding: 5px 10px 10px;
+                text-align: center;
+                position: relative;
+
+                .item-status {
+                    display: inline-block;
+                    background: #e1effe;
+                    color: #1e429f;
+                    padding: 4px 10px;
+                    font-size: 10px;
+                    font-weight: 700;
+                    border-radius: 20px;
+                    margin-bottom: 10px;
+                }
+
+                .item-title {
+                    font-size: 13px; 
+                    color: #333; 
+                    font-weight: 600;
+                    height: 38px; 
+                    line-height: 1.4;
+                    display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2;
+                    -webkit-box-orient: vertical; overflow: hidden;
+                }
+
+                .item-price {
+                    color: #1d4ed8; font-weight: 800; font-size: 16px;
+                    margin-top: 8px; display: block;
+                    .old-price {
+                        color: #999; text-decoration: line-through;
+                        font-size: 14px; font-weight: 400; margin-left: 8px;
+                    }
+                }
+
+                .hover-button-wrapper {
+                    margin-top: 10px;
+                    min-height: 40px;
+                }
+
+                .add-to-cart-hover {
+                    width: 100%;
+                    padding: 10px;
+                    background-color: #eab026;
+                    color: #fff;
+                    border: none;
+                    border-radius: 20px;
+                    font-weight: 700;
+                    font-size: 13px;
+                    cursor: pointer;
+                    
+                    // TRẠNG THÁI ẨN MẶC ĐỊNH
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(10px); 
+                    transition: all 0.3s ease;
+
+                    &:hover { background-color: #ae8223; }
+                }
+            }
+
+            // PHẢI ĐỂ HOVER Ở CUỐI CÙNG ĐỂ GHI ĐÈ LÊN TRẠNG THÁI CỦA .item-info
+            &:hover {
+                transform: translateY(-8px);
+                border-color: #eab026;
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+                .add-to-cart-hover {
+                    opacity: 1 !important; 
+                    visibility: visible;
+                    transform: translateY(0);
+                }
+            }
+
+            
+        }
+    }
+}

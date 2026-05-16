@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - VA Figure</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Nhớ kiểm tra file CSS này nhé chủ nhân Trương Thành Đạt -->
+    <link rel="stylesheet" href="Styles/main.css">
+</head>
+<body class="admin-body">
+    <!-- TOPBAR: Logo và Admin Info nằm chung 1 dòng -->
+    <header class="admin-topbar">
+        <div class="topbar-left">
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="topbar-logo">
+                <a href="index.html"><img src="Images/Screenshot 2026-05-01 134410.png" alt="VA Figure"></a>
+            </div>
+        </div>
+        <div class="header-user">
+            <span>Xin chào, <strong>admin</strong></span>
+            <div class="user-avatar">V</div>
+        </div>
+    </header>
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <div class="admin-main-layout">
+        <!-- SIDEBAR: Chỉ chứa Menu điều hướng -->
+        <aside class="admin-sidebar">
+            <nav class="admin-nav">
+                <div class="nav-group">CHUNG</div>
+                <a href="dashboard.html" class="nav-item active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="add_product.html" class="nav-item"><i class="fas fa-plus-square"></i> Thêm sản phẩm</a>
+                <a href="add_category.html" class="nav-item"><i class="fas fa-folder-plus"></i> Thêm danh mục</a>
+                <a href="add_blog.html" class="nav-item"><i class="fas fa-folder-plus"></i> Thêm tin tức</a>
+
+                <div class="nav-group">QUẢN LÍ</div>
+                <a href="dashboard_product_list.html" class="nav-item"><i class="fas fa-box"></i> Sản phẩm</a>
+                <a href="dashboard_category_list.html" class="nav-item"><i class="fas fa-link"></i> Danh mục</a>
+                <a href="dashboard_blog_list.html" class="nav-item "><i class="fas fa-tags"></i> Blog</a>
+                <a href="#" class="nav-item"><i class="fas fa-users"></i> Người dùng</a>
+                <a href="#" class="nav-item"><i class="fas fa-shopping-cart"></i> Đơn hàng</a>
+            </nav>
+        </aside>
+
+        <main class="admin-content">
+    <section class="dashboard-grid">
+        
+        <!-- Hàng 1: Chiếm 2 cột -->
+        <div class="chart-card">
+            <h3>Doanh số bán hàng</h3>
+            <div class="chart-wrapper">
+                <canvas id="chartSalesProduct"></canvas>
+            </div>
+        </div>
+
+        <!-- Hàng 1: Chiếm 1 cột -->
+        <div class="chart-card">
+            <h3>Tổng đơn hàng</h3>
+            <div class="chart-wrapper">
+                <canvas id="chartOrdersTotal"></canvas>
+            </div>
+        </div>
+
+        <!-- Hàng 2: Khung 1 -->
+        <div class="chart-card">
+            <h3>Doanh số hằng ngày</h3>
+            <div class="chart-wrapper">
+                <canvas id="chartSalesDaily"></canvas>
+            </div>
+        </div>
+
+        <!-- Hàng 2: Khung 2 (Phần mới thêm để đủ 3 cột như mẫu) -->
+        <div class="chart-card">
+            <h3>69 đơn hàng</h3>
+            <p style="font-size: 14px; color: #666; margin-top: -15px;">Đơn hàng tháng này</p>
+            <div class="chart-wrapper">
+                <canvas id="chartOrderMonthly"></canvas>
+            </div>
+        </div>
+
+        <!-- Hàng 2: Khung 3 -->
+        <div class="chart-card">
+            <h3>Lợi nhuận</h3>
+            <div class="chart-wrapper">
+                <canvas id="chartProfit"></canvas>
+            </div>
+        </div>
+
+    </section>
+</main>
+    </div>
+
+    <script src="JS/admin_charts.js"></script>
+    <script src="JS/product_management.js"></script>
+</body>
+</html>

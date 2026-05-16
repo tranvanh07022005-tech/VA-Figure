@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm - VA Figure Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Styles/main.css">
+</head>
+<body class="admin-body">
+
+    <header class="admin-topbar">
+        <div class="topbar-left">
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="topbar-logo">
+                <a href="index.html"><img src="Images/Screenshot 2026-05-01 134410.png" alt="VA Figure"></a>
+            </div>
+        </div>
+        <div class="header-user">
+            <span>Xin chào, <strong>admin</strong></span>
+            <div class="user-avatar">V</div>
+        </div>
+    </header>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <div class="admin-main-layout">
+        <aside class="admin-sidebar">
+            <nav class="admin-nav">
+                <div class="nav-group">CHUNG</div>
+                <a href="dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="add_product.html" class="nav-item"><i class="fas fa-plus-square"></i> Thêm sản phẩm</a>
+                <a href="add_category.html" class="nav-item"><i class="fas fa-folder-plus"></i> Thêm danh mục</a>
+                <a href="add_blog.html" class="nav-item"><i class="fas fa-folder-plus"></i> Thêm tin tức</a>
+
+                <div class="nav-group">QUẢN LÍ</div>
+                <a href="dashboard_product_list.html" class="nav-item active"><i class="fas fa-box"></i> Sản phẩm</a>
+                <a href="dashboard_category_list.html" class="nav-item"><i class="fas fa-link"></i> Danh mục</a>
+                <a href="dashboard_blog_list.html" class="nav-item "><i class="fas fa-tags"></i> Blog</a>
+                <a href="#" class="nav-item"><i class="fas fa-users"></i> Người dùng</a>
+                <a href="#" class="nav-item"><i class="fas fa-shopping-cart"></i> Đơn hàng</a>
+            </nav>
+        </aside>
+
+        <main class="admin-content">
+    <div class="page-header">
+        <h2 class="page-title">Sản phẩm</h2>
+        <a href="add_product.html" class="btn-add-primary">Thêm sản phẩm</a>
+    </div>
+
+    <div class="table-container">
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th width="120">Hình ảnh</th>
+                    <th>Tên sản phẩm</th>
+                    <th width="150">Giá</th>
+                    <th width="100">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody id="product-list-body">
+                </tbody>
+        </table>
+    </div>
+</main>
+    </div>
+
+    <script>
+        // Data 32 sản phẩm của chủ nhân Trương Thành Đạt
+        const products = [
+            { id: 'sp-01', img: 'Images/51RPkzAjDML._AC_SX679_.jpg', title: 'Mô hình Shimoe Koharu 22cm PVC', price: '180.000đ', old: '' },
+            { id: 'sp-02', img: 'Images/s-l960.webp', title: 'Mô hình Honkai: Star Rail Jingliu 38cm PVC', price: '550.000đ', old: '' },
+            { id: 'sp-03', img: 'Images/582c56fc8e1e1b244b32e3eab022389c98c4ad26.webp', title: 'Hatsune Miku ver Outfit Sakura-Vocaloid-Chính hãng TAITO', price: '500.000đ', old: '' },
+            { id: 'sp-04', img: 'Images/OnePieceBattleRecordCollectionExtra-CharlotteLinlin01.webp', title: 'Mô hình Charlotte Linlin dòng Battle Record Collection Extra-One Piece-Chính hãng Banpresto', price: '950.000đ', old: '' },
+            { id: 'sp-05', img: 'Images/hinh-anh_2026-04-30_150914867-e1777536574948.webp', title: 'Mô hình Albedo ver Pirate dòng Coreful-Overlord-Chính hãng Taito', price: '950.000đ', old: '' },
+            { id: 'sp-06', img: 'Images/TheQuintessentialQuintupletsDesktopCuteFigure-NinoNakanoOriginalCatRoomWearVer._TaikureExclusive_1.webp', title: 'Mô hình Desktop Cute Nino Nakano Original Cat Room Wear Ver-Gotoubun no Hanayome-Chính hãng Taito', price: '750.000đ', old: '' },
+            { id: 'sp-07', img: 'Images/hinh-anh_2026-02-17_170512435-e1771322733808.webp', title: 'Trio-Try-iT Hatsune Miku chủ đề Kuromi SnowMiku-Vocaloid-Chính hãng Furyu', price: '590.000đ', old: '' },
+            { id: 'sp-08', img: 'Images/hinh-anh_2026-04-23_194413592-e1776948276631.webp', title: 'S.H.Figuarts Portgas D. Ace ver Marineford Summit Battle-One Piece-Chính hãng Tamashii Nations', price: '1.200.000đ', old: '1.500.000đ' },
+            { id: 'sp-09', img: 'Images/TheQuintessentialQuintupletsDesktopCute-MikuNakanoOriginalCatRoomwearVer._TaikureExclusive_1.webp', title: 'Miku Nakano Original Cat Roomwear Ver-Gotoubun no Hanayome-Chính hãng Taito', price: '499.000đ', old: '' },
+            { id: 'sp-10', img: 'Images/d18734f0-e4d9-40b1-939c-5a0aa4e4f19e_4c285e8e01864bfd9de1802d6e1c9cea_master.webp', title: 'Albedo Wing-Overlord-KADOKAWA', price: '1.500.000đ', old: '' },
+            { id: 'sp-11', img: 'Images/adb106d6-ebe2-4d45-a1b2-c58042efca3f_8f8cbbb0d437475fa2217a3a4e7e35d6_master.webp', title: 'Fushiguro Toji-Jujutsu Kaisen-PowerClub Studio', price: '1.200.000đ', old: '' },
+            { id: 'sp-12', img: 'Images/hinh-anh_2026-04-22_134049041.webp', title: 'Nendoroid Kyoko Sakura-Puella Magi Madoka Magica Walpurgisnacht: Rising-Chính hãng Good Smile Company', price: '300.000đ', old: '' },
+            { id: 'sp-13', img: 'Images/OverlordT-mostFigure-Albedo_TaikureExclusive_1.webp', title: 'Mô hình Albedo dòng T-most-Overlord-Chính hãng Taito', price: '2.350.000đ', old: '4.500.000đ' },
+            { id: 'sp-14', img: 'Images/hinh-anh_2025-01-22_111315129.webp', title: 'Blindbox huy hiệu chủ đề CG vol 6-Honkai Impact 3rd-Chính hãng Mihoyo', price: '690.000đ', old: '750.000đ' },
+            { id: 'sp-15', img: 'Images/IchibanKujiJujutsuKaisenCullingGamePart2-JPrizeKenjakuMasterliseExpieceFigure_1.webp', title: 'Mô hình Kenjaku dòng Masterlise Expiece-Jujutsu Kaisen Culling Game Part 2-Chính hãng Bandai', price: '2.375.000đ', old: '2.500.000đ' },
+            { id: 'sp-16', img: 'Images/FIGURE-200643.jpg', title: 'Nendoroid Tsukatsuki Rio-Blue Archive-Chính hãng Good Smile Company', price: '450.000đ', old: '500.000đ' },
+            { id: 'sp-17', img: 'Images/20241208_lu6NSQoxf6.jpeg', title: 'Mô Hình Nendoroid Doll Venti', price: '810.000đ', old: '900.000đ' },
+            { id: 'sp-18', img: 'Images/O1CN01gseIF51fEbNnyNoMd_!!4611686018427383383-0-item_pic.webp', title: 'Mô Hình Nendoroid Honkai: Star Rail – Sunday', price: '450.000đ', old: '' },
+            { id: 'sp-19', img: 'Images/O1CN01cJUq0M1QY65bTZCqy_4611686018427380099-2-item_pic.avif', title: 'Mô hình Noodle Stopper Hatsune Miku chủ đề Tiên Nữ Linh Lan-Vocaloid-Chính hãng Furyu', price: '690.000đ', old: '750.000đ' },
+            { id: 'sp-20', img: 'Images/FIGURE-201207.webp', title: 'Revoltech Miyako-Blue Archive-Chính hãng Kaiyodo', price: '690.000đ', old: '750.000đ' },
+            { id: 'sp-21', img: 'Images/4019ff2496ab3eaa534f3c3846038545-1684084209524.jpg', title: 'Mô hình tĩnh Anime Figure Saber Alter Fate/Grand Order - Xinhao', price: '1.200.000đ', old: '' },
+            { id: 'sp-22', img: 'Images/hinh-anh_2025-08-20_122315268.webp', title: 'Mô hình Trio-Try-iT Elaina – Majo no Tabitabi – Chính hãng Furyu', price: '750.000đ', old: '' },
+            { id: 'sp-23', img: 'Images/hr_apex16188.webp', title: 'Zenless Zone Zero - Ellen Joe - figure 1/7', price: '650.000đ', old: '' },
+            { id: 'sp-24', img: 'Images/0a0e3424-4e4b-416b-af8e-e02d65351c34-jpeg-1745835082334.webp', title: 'Figure Yatogami Tohka - Date A Live IV', price: '900.000đ', old: '' },
+            { id: 'sp-25', img: 'Images/Image_0_2411081231033754.webp', title: 'Genshin Impact - Nendoroid Raiden Shogun', price: '300.000đ', old: '' },
+            { id: 'sp-26', img: 'Images/nendoroid-character-vocal-series-01-hatsune-miku-rabbit-hole-ver-good-smile-company-figurine-yattajapan-1.webp', title: 'Nendoroid Character Vocal Series 01 Hatsune Miku: Rabbit Hole Ver.', price: '300.000đ', old: '' },
+            { id: 'sp-27', img: 'Images/51orYJAW6DL._AC_.jpg', title: 'Kimetsu no Yaiba: Shinobu Kocho Nendoroid Swacchao!', price: '300.000đ', old: '' },
+            { id: 'sp-28', img: 'Images/E1087325_1_1920x1920.jpg', title: 'Haikyu!! - YuMe Anime Blind Box Figure', price: '350.000đ', old: '' },
+            { id: 'sp-29', img: 'Images/61Cy2CxghBL._AC_SX679_.jpg', title: 'Jujutsu Kaisen Mystery Blind Bag, Version 1 - 3 Pack - Mini 2', price: '200.000đ', old: '' },
+            { id: 'sp-30', img: 'Images/op_baf86e4833df42518779e492cd36b789_grande.jpg', title: 'Chính Hãng BANDAI - Pack nhân phẩm, gói thẻ nhân phẩm anime One Piece TCG', price: '400.000đ', old: '' },
+            { id: 'sp-31', img: 'Images/Nhoi-Bong-Frieren-Beyond-Journey-s-End-Mascot-Plush-Chibigurumi-Vol-1-Banpresto--1.jpg', title: "Nhồi Bông Frieren: Beyond Journey's End", price: '350.000đ', old: '' },
+            { id: 'sp-32', img: 'Images/20240801_9EgqynyUxd.jpeg', title: 'Cốc Đổi Màu Detective Conan', price: '150.000đ', old: '' }
+        ];
+
+        const tbody = document.getElementById('product-list-body');
+
+products.forEach(p => {
+    // Tạo đường dẫn kèm thông tin sản phẩm (mã hóa URL để tránh lỗi ký tự đặc biệt)
+    const editUrl = `add_product.html?name=${encodeURIComponent(p.title)}&price=${p.price.replace(/\D/g,'')}&sale=${p.old.replace(/\D/g,'')}&img=${encodeURIComponent(p.img)}`;
+
+    const row = `
+        <tr>
+            <td>
+                <a href="${editUrl}"><img src="${p.img}" class="table-img" alt="Product"></a>
+            </td>
+            <td class="product-name-cell">
+                <a href="${editUrl}" style="text-decoration: none; color: inherit;">${p.title}</a>
+            </td>
+            <td class="price-cell">
+                <strong>${p.price}</strong>
+                ${p.old ? `<span class="old-price-table">${p.old}</span>` : ''}
+            </td>
+            <td>
+                <button class="btn-delete-item" onclick="this.closest('tr').remove()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </td>
+        </tr>
+    `;
+    tbody.innerHTML += row;
+});
+    </script>
+    <script src="JS/product_management.js"></script>
+</body>
+</html>

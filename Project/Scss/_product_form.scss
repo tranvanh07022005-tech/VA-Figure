@@ -1,0 +1,178 @@
+/* Layout Admin Tổng Thể */
+.admin-main-layout {
+    display: flex;
+    min-height: calc(100vh - 70px);
+}
+
+/* Container cho Form - Đã chỉnh lại tỉ lệ 2:1 chuẩn mẫu */
+.product-form-container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.form-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+/* Khung bên trái rộng hơn (Chiếm 2 phần) */
+.main-form { 
+    flex: 2; 
+}
+
+/* Khung bên phải nhỏ lại (Chiếm 1 phần) */
+.image-upload-card { 
+    flex: 1; 
+    position: static; 
+    top: 100px; 
+}
+
+.form-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #334e6f;
+    border-left: 4px solid #eab026;
+    padding-left: 15px;
+}
+
+/* Input Styling */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.input-group input, .input-group select, .input-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border 0.3s; 
+}
+
+.input-group input:focus { border-color: #27ae60; outline: none; }
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+/* Rich Editor */
+.rich-editor-wrapper {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.editor-toolbar {
+    background: #f8f9fa;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    gap: 10px;
+}
+
+.editor-toolbar button {
+    background: none;
+    border: 1px solid #eee;
+    padding: 5px 10px;
+    border-radius: 4px; 
+    cursor: pointer;
+    color: #666;
+}
+
+.rich-editor-wrapper textarea {
+    border: none;
+    height: 200px;
+    resize: vertical;
+}
+
+/* Nút bấm */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-save { background: #E0AD3B; color: white; padding: 12px 30px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+.btn-save:hover { background: #ffc745; }
+.btn-cancel { background: #95a5a6; color: white; padding: 12px 30px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+
+/* Upload Area - CANH GIỮA HOÀN HẢO */
+.upload-area {
+    border: 2px dashed #ddd;
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 60px 20px; 
+    text-align: center;
+    position: relative; 
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-area:hover { border-color: #E0AD3B; background: #f9fffb; }
+
+.upload-content {
+    display: flex;
+    flex-direction: column; /* Xếp dọc: Mây -> Nút -> Chữ */
+    align-items: center;    /* Canh giữa ngang */
+    justify-content: center; /* Canh giữa dọc */
+    gap: 15px;              
+}
+
+.upload-content i { 
+    font-size: 60px; 
+    color: #aaa; 
+    margin: 0; 
+}
+
+.btn-upload { 
+    display: inline-block; 
+    background: #34495e; 
+    color: white; 
+    padding: 10px 25px; 
+    border-radius: 6px; 
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#gallery img { width: 100%; border-radius: 8px; margin-top: 15px; }
+
+/* Style cho thông báo thành công */
+.toast-msg {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #27ae60;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 9999;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.toast-msg i { font-size: 20px; }

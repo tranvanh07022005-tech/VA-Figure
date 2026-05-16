@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - VA Figure</title>
+    <link rel="stylesheet" href="Styles/main.css">
+    <!-- Font Awesome cho icon Facebook, Google -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="login-page">
+
+    <div class="login-container">
+        <!-- Tiêu đề & Breadcrumb -->
+        <div class="login-header">
+            <h1>Đăng nhập</h1>
+            <p>Trang chủ  /  Đăng nhập tài khoản</p>
+        </div>
+
+        <!-- Form đăng nhập -->
+        <form class="login-form">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Mật khẩu" required>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn-login">Đăng nhập</button>
+                <a href="#" class="forgot-password">Quên mật khẩu?</a>
+            </div>
+        </form>
+
+        <!-- Ngăn cách -->
+        <div class="separator">
+            <span>Hoặc đăng nhập qua</span>
+        </div>
+
+        <!-- Đăng nhập mạng xã hội -->
+        <div class="social-login">
+            <button class="btn-facebook">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </button>
+            <button class="btn-google">
+                <i class="fab fa-google-plus-g"></i> Google
+            </button>
+        </div>
+
+        <!-- Phần đăng ký -->
+        <div class="register-section">
+            <h2>Đăng ký</h2>
+            <div class="register-info">
+                Tạo tài khoản để quản lý đơn hàng, và các thông tin thanh toán, gửi hàng một cách đơn giản hơn.
+            </div>
+            <button class="btn-outline">Tạo tài khoản</button>
+            <button class="btn-outline" onclick="window.location.href='index.html'">Quay về trang chủ</button>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách tin tức - VA Figure Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Styles/main.css">
+</head>
+<body class="admin-body">
+
+    <header class="admin-topbar">
+        <div class="topbar-left">
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="topbar-logo">
+                <a href="index.html"><img src="Images/Screenshot 2026-05-01 134410.png" alt="VA Figure"></a>
+            </div>
+        </div>
+        <div class="header-user">
+            <span>Xin chào, <strong>admin</strong></span>
+            <div class="user-avatar">V</div>
+        </div>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <div class="admin-main-layout">
+        <aside class="admin-sidebar">
+            <nav class="admin-nav">
+                <div class="nav-group">CHUNG</div>
+                <a href="dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="add_product.html" class="nav-item"><i class="fas fa-plus-square"></i> Thêm sản phẩm</a>
+                <a href="add_category.html" class="nav-item"><i class="fas fa-folder-plus"></i> Thêm danh mục</a>
+                <a href="add_blog.html" class="nav-item"><i class="fas fa-folder-plus"></i> Thêm tin tức</a>
+
+                <div class="nav-group">QUẢN LÍ</div>
+                <a href="dashboard_product_list.html" class="nav-item"><i class="fas fa-box"></i> Sản phẩm</a>
+                <a href="dashboard_category_list.html" class="nav-item"><i class="fas fa-link"></i> Danh mục</a>
+                <a href="dashboard_blog_list.html" class="nav-item active"><i class="fas fa-tags"></i> Blog</a>
+                <a href="#" class="nav-item"><i class="fas fa-users"></i> Người dùng</a>
+                <a href="#" class="nav-item"><i class="fas fa-shopping-cart"></i> Đơn hàng</a>
+            </nav>
+        </aside>
+
+        <main class="admin-content">
+            <div class="page-header">
+                <h2 class="page-title">Tin tức</h2>
+                <a href="add_blog.html" class="btn-add-primary">Thêm tin tức</a>
+            </div>
+
+            <div class="table-container">
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th width="180">Hình ảnh</th>
+                            <th>Tiêu đề</th>
+                            <th width="120">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="blog-list-body">
+                        </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Data tin tức từ hình ảnh image_edb7ba.png
+        const blogs = [
+            { id: 'b-01', img: 'Images/64786b91-9496-4495-9423-93cc39627640.jpg', title: '[FURYU] LỊCH PHÁT HÀNH MÔ HÌNH GAMEPRIZE THÁNG 6/2026' },
+            { id: 'b-02', img: 'Images/f5a2b6c3-e681-433e-acc8-d671baf2aae9.jpg', title: '[TAITO] LỊCH PHÁT HÀNH MÔ HÌNH GAMEPRIZE THÁNG 8/2026' },
+            { id: 'b-03', img: 'Images/190b2744-ea86-4b2d-ba68-dc205878c7d7.jpg', title: '[ICHIBAN KUJI] LỊCH PHÁT HÀNH MÔ HÌNH ICHIBAN KUJI THÁNG 10/2026' },
+            { id: 'b-04', img: 'Images/3014ecb4-3634-46b2-9ac6-012f59a53db9.jpg', title: '[BANDAI] LỊCH PHÁT HÀNH MÔ HÌNH GAMEPRIZE THÁNG 12/2026' },
+            { id: 'b-05', img: 'Images/march-comes-in-like-a-lion-2-1777534569263449523725-0-0-1200-1920-crop-17775359298361359069871.webp', title: 'Mười năm sau năm 2016: Những tác phẩm anime vẫn giữ nguyên sức hút' },
+            { id: 'b-06', img: 'Images/kb-teaser-en-17774504080891011386714-0-0-764-1221-crop-17774504341071747455539.webp', title: 'Trailer Kagurabachi cán mốc 6 triệu lượt xem sau 24 giờ' },
+            { id: 'b-07', img: 'Images/crunchyroll-02-1760585106935962588350.webp', title: 'Chiến dịch Ani-May 2026: Crunchyroll chiếu miễn phí Solo Leveling' },
+            { id: 'b-08', img: 'Images/3-1777279542357638045461-0-33-1053-1718-crop-17772807258241153683813.webp', title: 'My Hero Academia hé lộ tập đặc biệt: Lời chào sau cuối cho hành trình 10 năm' },
+            { id: 'b-09', img: 'Images/anh-man-hinh-2026-04-26-luc-14-59-32-1777190381679936023752-0-20-846-1374-crop-177719040033460684114.webp', title: '5 điều fan cần biết trước khi Black Clover sắp khép lại hành trình' }
+        ];
+
+        const tbody = document.getElementById('blog-list-body');
+        blogs.forEach(b => {
+            // Nhấn vào để "bay" sang trang sửa tin tức (nếu có)
+            const editUrl = `add_blog.html?title=${encodeURIComponent(b.title)}&img=${encodeURIComponent(b.img)}`;
+
+            const row = `
+                <tr>
+                    <td>
+                        <a href="${editUrl}"><img src="${b.img}" class="table-img" alt="Blog"></a>
+                    </td>
+                    <td class="product-name-cell">
+                        <a href="${editUrl}" style="text-decoration: none; color: inherit;">${b.title}</a>
+                    </td>
+                    <td>
+                        <button class="btn-delete-item" onclick="this.closest('tr').remove()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </td>
+                </tr>
+            `;
+            tbody.innerHTML += row;
+        });
+    </script>
+    <script src="JS/product_management.js"></script>
+</body>
+</html>

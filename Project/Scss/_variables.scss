@@ -1,0 +1,18 @@
+// Màu sắc thương hiệu VA Figure
+$primary-color: #E0AD3B;
+$primary-hover: #eab026;
+$bg-body: #f0f2f5;
+$text-main: #333;
+$text-white: #ffffff;
+$danger-red: #ff4757;
+// Thêm vào file _variables.scss
+$sale-blue: #5db1e4;
+$price-old: #999;
+// Hiệu ứng
+$shadow: 0 4px 10px rgba(0,0,0,0.05);
+$transition: 0.3s;
+// _variables.scss
+$sm: 576px;    // Phone (Portrait)
+$md: 768px;    // Phone (Landscape) / Tablet
+$lg: 992px;    // iPad Pro / Laptop nhỏ
+$xl: 1200px;   // PC / Laptop lớn

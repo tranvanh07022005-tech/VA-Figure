@@ -1,0 +1,33 @@
+.categories-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Chia 3 cột đều nhau
+    gap: 20px;
+
+    .category-card {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: $shadow;
+        cursor: pointer;
+        transition: $transition;
+
+        img {
+            width: 100%;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        &:hover {
+            transform: translateY(-5px);
+
+            img {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    // Tự động chuyển thành 1 cột khi xem trên điện thoại
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}

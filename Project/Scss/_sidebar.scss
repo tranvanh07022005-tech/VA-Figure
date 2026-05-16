@@ -1,0 +1,78 @@
+.sidebar-review {
+    flex: 1;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: $shadow; // Sử dụng biến shadow từ main.scss
+
+    .sidebar-title {
+        font-size: 16px;
+        color: $primary-color; // Sử dụng biến màu chủ đạo
+        margin-bottom: 15px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: bold;
+
+        i {
+            font-size: 10px;
+            color: $primary-color;
+        }
+    }
+
+    .review-scroll-container {
+        max-height: 335px;
+        overflow-y: auto;
+        padding-right: 5px;
+
+        // Tùy chỉnh thanh cuộn
+        &::-webkit-scrollbar { width: 6px; }
+        &::-webkit-scrollbar-track { background: #f1f1f1; }
+        &::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+            &:hover { background: #888; }
+        }
+
+        // Lớp bọc link mới thêm vào
+        .review-link {
+            text-decoration: none !important; // Triệt tiêu gạch chân hoàn toàn
+            color: inherit; // Tự động lấy màu chữ từ p bên trong
+            display: block; // Ép thẻ a chiếm hết không gian để dễ bấm
+
+            .review-item {
+                display: flex;
+                gap: 12px;
+                margin-bottom: 15px;
+                cursor: pointer;
+                transition: transform 0.2s ease; // Thêm hiệu ứng chuyển động mượt
+
+                img {
+                    width: 80px;
+                    height: 60px;
+                    object-fit: cover;
+                    border-radius: 4px;
+                }
+
+                p {
+                    font-size: 13px;
+                    font-weight: 600;
+                    line-height: 1.4;
+                    color: #334e6f;
+                    margin: 0; // Xóa margin mặc định để không lệch khung
+                }
+            }
+
+            // Hiệu ứng hover cho toàn bộ khối link
+            &:hover .review-item {
+                transform: translateX(5px); 
+                p {
+                    color: $primary-color; // Đổi màu chữ khi rê chuột cho sinh động
+                }
+            }
+        }
+    }
+}

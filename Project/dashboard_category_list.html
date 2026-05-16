@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách danh mục - VA Figure Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Styles/main.css">
+</head>
+<body class="admin-body">
+
+    <header class="admin-topbar">
+        <div class="topbar-left">
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="topbar-logo">
+                <a href="index.html"><img src="Images/Screenshot 2026-05-01 134410.png" alt="VA Figure"></a>
+            </div>
+        </div>
+        <div class="header-user">
+            <span>Xin chào, <strong>admin</strong></span>
+            <div class="user-avatar">V</div>
+        </div>
+    </header>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <div class="admin-main-layout">
+        <aside class="admin-sidebar">
+            <nav class="admin-nav">
+                <div class="nav-group">CHUNG</div>
+                <a href="dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="add_product.html" class="nav-item"><i class="fas fa-plus-square"></i> Thêm sản phẩm</a>
+                <a href="add_category.html" class="nav-item"><i class="fas fa-folder-plus"></i> Thêm danh mục</a>
+                <a href="add_blog.html" class="nav-item"><i class="fas fa-folder-plus"></i> Thêm tin tức</a>
+
+                <div class="nav-group">QUẢN LÍ</div>
+                <a href="dashboard_product_list.html" class="nav-item"><i class="fas fa-box"></i> Sản phẩm</a>
+                <a href="dashboard_category_list.html" class="nav-item active"><i class="fas fa-link"></i> Danh mục</a>
+                <a href="dashboard_blog_list.html" class="nav-item "><i class="fas fa-tags"></i> Blog</a>
+                <a href="#" class="nav-item"><i class="fas fa-users"></i> Người dùng</a>
+                <a href="#" class="nav-item"><i class="fas fa-shopping-cart"></i> Đơn hàng</a>
+            </nav>
+        </aside>
+
+        <main class="admin-content">
+            <div class="page-header">
+                <h2 class="page-title">Danh mục</h2>
+                <a href="add_category.html" class="btn-add-primary">Thêm danh mục</a>
+            </div>
+
+            <div class="table-container">
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th width="150">Hình ảnh</th>
+                            <th>Tên danh mục</th>
+                            <th width="150">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="category-list-body">
+                        </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Data danh mục dựa trên hình ảnh image_fc3c9a.png
+        const categories = [
+            { id: 'cat-01', img: 'Images/hinh-anh_2026-02-17_170512435-e1771322733808.webp', title: 'Mô Hình' },
+            { id: 'cat-02', img: 'Images/hinh-anh_2026-04-22_134049041.webp', title: 'Nendoroid' },
+            { id: 'cat-03', img: 'Images/61Cy2CxghBL._AC_SX679_.jpg', title: 'Blind Box' },
+            { id: 'cat-04', img: 'Images/op_baf86e4833df42518779e492cd36b789_grande.jpg', title: 'Pack Card' },
+            { id: 'cat-05', img: 'Images/20240801_9EgqynyUxd.jpeg', title: 'Phụ Kiện Khác' }
+        ];
+
+        const tbody = document.getElementById('category-list-body');
+        categories.forEach(c => {
+            // Đường dẫn chuyển sang trang sửa kèm params
+            const editUrl = `add_category.html?name=${encodeURIComponent(c.title)}&img=${encodeURIComponent(c.img)}`;
+
+            const row = `
+                <tr>
+                    <td>
+                        <a href="${editUrl}"><img src="${c.img}" class="table-img" alt="Category"></a>
+                    </td>
+                    <td class="product-name-cell">
+                        <a href="${editUrl}" style="text-decoration: none; color: inherit;">${c.title}</a>
+                    </td>
+                    <td>
+                        <button class="btn-delete-item" onclick="this.closest('tr').remove()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </td>
+                </tr>
+            `;
+            tbody.innerHTML += row;
+        });
+    </script>
+    <script src="JS/product_management.js"></script>
+
+</body>
+</html>

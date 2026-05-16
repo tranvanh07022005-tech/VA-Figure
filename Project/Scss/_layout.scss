@@ -1,0 +1,66 @@
+.main-layout {
+    margin: 40px auto;
+    display: flex;
+    gap: 25px;
+    align-items: stretch; // SỬA: Giúp Banner và Sidebar cố gắng cao bằng nhau
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start; // Trở về mặc định trên điện thoại
+    }
+
+    .banner {
+        flex: 3;
+        max-width: 75%;
+        width: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        position: relative; // Đảm bảo nút bấm định vị đúng
+
+        @media (max-width: 768px) {
+            max-width: 100%;
+        }
+    }
+}
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #E0AD3B;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    
+    // Đẩy z-index lên cao nhất để không bị đè
+    z-index: 9999;
+    
+    // Sử dụng Flexbox để căn giữa icon
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    // Hiệu ứng ẩn hiện mượt mà
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+    // Class kích hoạt khi cuộn xuống
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    &:hover {
+        background-color: #219150;
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+}
+

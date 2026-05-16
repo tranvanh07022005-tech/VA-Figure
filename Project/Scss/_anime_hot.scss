@@ -1,0 +1,79 @@
+/* ==========================================================================
+   ANIME HOT SECTION (Icon tròn & Hiệu ứng Hover)
+   ========================================================================== */
+.anime-hot {
+    margin-top: 40px;
+    display: block; // Ghi đè lại flex của container
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    padding-bottom: 50px;
+    box-shadow: $shadow; // Dùng biến shadow đã khai báo
+
+    .section-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #4a90bc;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    .anime-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap; // Tự xuống hàng nếu màn hình nhỏ
+        gap: 15px;
+    }
+
+    .anime-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100px;
+        cursor: pointer;
+
+        .anime-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #fff;
+            border: 2px solid black;
+            transition: $transition; // Dùng biến transition
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        span {
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            color: #555;
+            white-space: nowrap; // Không cho chữ xuống hàng
+            transition: $transition;
+        }
+
+        // Hiệu ứng khi di chuột vào toàn bộ item
+        &:hover {
+            .anime-circle {
+                transform: scale(1.1);
+                border-color: $primary-color;
+                box-shadow: 0 4px 10px rgba(224, 173, 59, 0.3);
+            }
+
+            span {
+                color: $primary-color;
+            }
+        }
+    }
+}

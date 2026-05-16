@@ -1,0 +1,159 @@
+/* 1. Nền trang đăng nhập */
+.login-page {
+    background-color: #E0AD3B; /* Màu vàng rực rỡ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* 2. Hộp đăng nhập Glassmorphism */
+.login-container {
+    background: rgba(255, 255, 255, 0.2); /* Độ trong suốt */
+    backdrop-filter: blur(10px); /* Làm mờ hậu cảnh */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* 3. Tiêu đề */
+.login-header h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+    text-transform: none;
+}
+
+.login-header p {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+/* 4. Input fields */
+.login-form input {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    outline: none;
+}
+
+.login-form input::placeholder {
+    color: #aaa;
+}
+
+/* 5. Nút bấm & Hành động */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.btn-login {
+    background-color: #2d7a0c; /* Màu xanh lá đậm */
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #24610a;
+}
+
+.forgot-password {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* 6. Ngăn cách (Separator) */
+.separator {
+    margin: 30px 0;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.separator span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f9d423; /* Trùng màu nền */
+    padding: 0 15px;
+    font-size: 13px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* 7. Social Login */
+.social-login {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.social-login button {
+    flex: 1;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-facebook { background-color: #3b5998; }
+.btn-google { background-color: #ea4335; }
+
+/* 8. Phần Đăng ký */
+.register-section h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.register-info {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn-outline {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 12px;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
