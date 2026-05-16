@@ -10,17 +10,13 @@
 <body>
     <header>
         <div class="container header-content">
-            <!-- Logo -->
             <div class="logo">
                 <a href="index.html">
                     <img src="Images/Screenshot 2026-05-01 134410.png" alt="VA Figure">
                 </a>
             </div>
             
-            <!-- Thanh tìm kiếm -->
-            <!-- Chuyển div thành form hoặc bọc form bên ngoài -->
             <form class="search-box">
-                <!-- Quan trọng: Phải có thuộc tính name="q" để lấy dữ liệu -->
                 <input type="text" name="q" placeholder="Tìm kiếm sản phẩm...">
                 
                 <button type="submit">
@@ -28,19 +24,15 @@
                 </button>
             </form>
 
-            <!-- Cụm chức năng -->
             <div class="header-icons">
                 <div class="user-actions">
-                    <!-- Nút Đăng nhập -->
                     <a href="login.html" class="login-link">
                         <i class="fa-regular fa-user"></i>
                         <span>Đăng nhập</span>
                     </a>
 
-                    <!-- Nút Giỏ hàng -->
                     <a href="cart.html" class="cart-btn-link">
                         <div class="cart-btn">
-                            <!-- Bọc icon và số 0 vào đây để làm điểm neo -->
                             <span class="cart-icon-wrapper">
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 <span class="cart-count">0</span>
@@ -54,16 +46,13 @@
     </header>
     <div class="sticky-header-container">
         <nav class="main-nav">
-            <!-- Nút Menu Hamburger cho Mobile/Tablet -->
             <button class="menu-toggle" id="menu-toggle">
                 <i class="fa-solid fa-bars"></i>
             </button>
 
             <ul class="container" id="nav-list">
-                <!-- 1. Cửa hàng -->
                 <li><a href="shop.html?cat=Cửa Hàng">Cửa Hàng</a></li>
 
-                <!-- 2. Mục Mô Hình -->
                 <li class="has-submenu">
                     <a href="shop.html?cat=Mô Hình">Mô Hình <i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="submenu">
@@ -72,7 +61,6 @@
                     </ul>
                 </li>
 
-                <!-- 3. Mục Nendoroid -->
                 <li class="has-submenu">
                     <a href="shop.html?cat=Nendoroid">Nendoroid <i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="submenu">
@@ -81,12 +69,10 @@
                     </ul>
                 </li>
 
-                <!-- 4. Các mục đơn khác -->
                 <li><a href="shop.html?cat=Pack Card">Pack Card</a></li>
                 <li><a href="shop.html?cat=Blind Box">Blind Box</a></li>
                 <li><a href="shop.html?cat=Phụ Kiện Khác">Phụ Kiện Khác</a></li>
                 
-                <!-- 5. Thẻ Tin Tức mới thêm vào đây -->
                 <li><a href="blogs.html">Tin Tức</a></li>
                 
                 <li><a href="lab_thuc_hanh.html">Lab Thực Hành</a></li>
@@ -97,10 +83,9 @@
     </div>
 
     <main class="container main-layout">
-        <section class="banner"> <!-- Thẻ cha bao ngoài cùng -->
-            <div class="slider-container"> <!-- Thẻ con làm khung chứa slide -->
+        <section class="banner"> 
+            <div class="slider-container"> 
                 
-                <!-- Các ảnh banner (Giữ nguyên class slide) -->
                 <div class="slide active">
                     <img src="Images\Screenshot 2026-05-01 141356.png" alt="Banner 1">
                 </div>
@@ -111,11 +96,9 @@
                     <img src="Images\Screenshot 2026-05-01 141414.png" alt="Banner 3">
                 </div>
 
-                <!-- Nút điều hướng (Nên nằm trong slider-container để dễ căn vị trí) -->
                 <button class="prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
                 <button class="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
 
-                <!-- Các chấm tròn nhỏ -->
                 <div class="dots">
                     <span class="dot active"></span>
                     <span class="dot"></span>
@@ -129,7 +112,6 @@
     <h3 class="sidebar-title"><i class="fa-solid fa-circle"></i> TIN TỨC</h3>
     <div class="review-scroll-container">
         
-        <!-- Bài 1: Mười năm sau năm 2016 (news-05) -->
         <a href="blog_detail.html?id=news-05" class="review-link">
             <div class="review-item">
                 <img src="Images/march-comes-in-like-a-lion-2-1777534569263449523725-0-0-1200-1920-crop-17775359298361359069871.webp" alt="Review">
@@ -137,7 +119,6 @@
             </div>
         </a>
 
-        <!-- Bài 2: Kagurabachi (news-06) -->
         <a href="blog_detail.html?id=news-06" class="review-link">
             <div class="review-item">
                 <img src="Images/kb-teaser-en-17774504080891011386714-0-0-764-1221-crop-17774504341071747455539.webp" alt="Review">
@@ -145,7 +126,6 @@
             </div>
         </a>
 
-        <!-- Bài 3: Ani-May (news-07) -->
         <a href="blog_detail.html?id=news-07" class="review-link">
             <div class="review-item">
                 <img src="Images/crunchyroll-02-1760585106935962588350.webp" alt="Review">
@@ -153,7 +133,6 @@
             </div>
         </a>
 
-        <!-- Bài 4: My Hero Academia (news-08) -->
         <a href="blog_detail.html?id=news-08" class="review-link">
             <div class="review-item">
                 <img src="Images/3-1777279542357638045461-0-33-1053-1718-crop-17772807258241153683813.webp" alt="Review">
@@ -161,7 +140,6 @@
             </div>
         </a>
 
-        <!-- Bài 5: Black Clover (news-09) -->
         <a href="blog_detail.html?id=news-09" class="review-link">
             <div class="review-item">
                 <img src="Images/anh-man-hinh-2026-04-26-luc-14-59-32-1777190381679936023752-0-20-846-1374-crop-177719040033460684114.webp" alt="Review">
@@ -232,13 +210,10 @@
         </div>
     </section>
 
-    <!-- PHẦN: SẢN PHẨM MỚI -->
 <section class="container new-products-section">
-    <!-- Tiêu đề nằm ngang bên trên -->
     <div class="section-header">
         <h3 class="section-title">SẢN PHẨM MỚI</h3>
     </div>
-    <!-- Lưới sản phẩm nằm bên dưới tiêu đề -->
     <div class="product-grid">
         <div class="product-card">
         <a href="product-detail.html?id=sp-01" class="product-item-link">
@@ -320,7 +295,6 @@
     </div>
 </section>
 
-<!-- PHẦN: SẢN PHẨM BÁN CHẠY -->
 <section class="container best-sellers-section">
     <div class="section-header">
         <h3 class="section-title">SẢN PHẨM BÁN CHẠY</h3>
@@ -408,7 +382,6 @@
     </div>
 </section>
 
-<!-- PHẦN: SẢN PHẨM GIẢM GIÁ -->
 <section class="container sale-products-section">
     <div class="section-header">
         <h3 class="section-title">SẢN PHẨM GIẢM GIÁ</h3>
@@ -501,16 +474,13 @@
     </div>
 </section>
 
-<!-- ==========================================================================
-   PHẦN TIN TỨC 
-   ========================================================================== -->
+
 <section class="container news-section">
     <div class="section-header">
         <h3 class="section-title">TIN TỨC</h3>
     </div>
 
     <div class="news-grid">
-    <!-- Tin tức 1: FURYU (news-01) -->
     <a href="blog_detail.html?id=news-01" class="news-card-link">
         <div class="news-card">
             <div class="news-img-wrapper">
@@ -527,7 +497,6 @@
         </div>
     </a>
 
-    <!-- Tin tức 2: TAITO (news-02) -->
     <a href="blog_detail.html?id=news-02" class="news-card-link">
         <div class="news-card">
             <div class="news-img-wrapper">
@@ -544,7 +513,6 @@
         </div>
     </a>
 
-    <!-- Tin tức 3: ICHIBAN KUJI (news-03) -->
     <a href="blog_detail.html?id=news-03" class="news-card-link">
         <div class="news-card">
             <div class="news-img-wrapper">
@@ -561,7 +529,6 @@
         </div>
     </a>
 
-    <!-- Tin tức 4: BANDAI (news-04) -->
     <a href="blog_detail.html?id=news-04" class="news-card-link">
         <div class="news-card">
             <div class="news-img-wrapper">
@@ -582,18 +549,14 @@
 <button id="backToTop" class="back-to-top" title="Lên đầu trang">
     <i class="fa-solid fa-chevron-up"></i>
 </button>
-<!-- ==========================================================================
-   FOOTER (CHÂN TRANG)
-   ========================================================================== -->
+
 <footer class="footer">
     <div class="container footer-content">
-        <!-- Cột 1: Logo và mô tả -->
         <div class="footer-col logo-col">
             <img src="Images\Screenshot 2026-05-01 134410.png" alt="VA FIGURE LOGO" class="footer-logo">
             <p class="footer-desc">VA Figure đồ án website bán mô hình anime cuối kì môn học thực hành nhập môn web</p>
         </div>
 
-        <!-- Cột 2: Thông tin liên hệ -->
         <div class="footer-col info-col">
             <h3>Thông tin</h3>
             <p><strong>Địa chỉ:</strong> 180 Cao Lỗ, Phường 4, Quận 8, TP. Hồ Chí Minh</p>
@@ -601,7 +564,6 @@
             <p><strong>Điện thoại:</strong> (028) 38 505 520</p>
         </div>
 
-        <!-- Cột 3: Bản đồ Google Maps -->
         <div class="footer-col map-col">
             <div class="map-embed">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.9544104258835!2d106.67525717480439!3d10.73799718940847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f62a90e5dbd%3A0x674d5126513db295!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgU8OgaSBHw7Ju!5e0!3m2!1svi!2s!4v1777710502763!5m2!1svi!2s" 
@@ -610,7 +572,6 @@
         </div>
     </div>
 
-    <!-- Dòng kẻ ngang và Thông tin sinh viên -->
     <div class="footer-bottom">
         <div class="container">
             <hr class="footer-divider">

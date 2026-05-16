@@ -66,7 +66,6 @@
     </div>
 
     <script>
-        // Data danh mục dựa trên hình ảnh image_fc3c9a.png
         const categories = [
             { id: 'cat-01', img: 'Images/hinh-anh_2026-02-17_170512435-e1771322733808.webp', title: 'Mô Hình' },
             { id: 'cat-02', img: 'Images/hinh-anh_2026-04-22_134049041.webp', title: 'Nendoroid' },
@@ -77,7 +76,6 @@
 
         const tbody = document.getElementById('category-list-body');
         categories.forEach(c => {
-            // Đường dẫn chuyển sang trang sửa kèm params
             const editUrl = `add_category.html?name=${encodeURIComponent(c.title)}&img=${encodeURIComponent(c.img)}`;
 
             const row = `

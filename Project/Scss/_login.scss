@@ -1,6 +1,6 @@
 /* 1. Nền trang đăng nhập */
 .login-page {
-    background-color: #E0AD3B; /* Màu vàng rực rỡ */
+    background-color: #E0AD3B; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,10 +9,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-/* 2. Hộp đăng nhập Glassmorphism */
+/* 2. Hộp đăng nhập  */
 .login-container {
-    background: rgba(255, 255, 255, 0.2); /* Độ trong suốt */
-    backdrop-filter: blur(10px); /* Làm mờ hậu cảnh */
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 20px;
@@ -62,7 +62,7 @@
 }
 
 .btn-login {
-    background-color: #2d7a0c; /* Màu xanh lá đậm */
+    background-color: #2d7a0c;
     color: white;
     border: none;
     padding: 12px 35px;
@@ -83,7 +83,7 @@
     font-size: 14px;
 }
 
-/* 6. Ngăn cách (Separator) */
+/* 6. Ngăn cách  */
 .separator {
     margin: 30px 0;
     position: relative;
@@ -95,7 +95,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #f9d423; /* Trùng màu nền */
+    background: #f9d423; 
     padding: 0 15px;
     font-size: 13px;
     border-radius: 20px;

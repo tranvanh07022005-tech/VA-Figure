@@ -453,7 +453,7 @@ body {
 }
 
 /* ==========================================================================
-   ANIME HOT SECTION (Icon tròn & Hiệu ứng Hover)
+   ANIME HOT SECTION 
    ========================================================================== */
 .anime-hot {
   margin-top: 40px;
@@ -523,7 +523,7 @@ body {
 }
 
 /* ==========================================================================
-   PRODUCT GRID SYSTEM (Chuẩn Layout + Không vỡ giao diện)
+   PRODUCT GRID SYSTEM 
    ========================================================================== */
 .new-products-section,
 .best-sellers-section,
@@ -686,7 +686,7 @@ body {
   margin-left: 5px;
 }
 .product-card {
-  /* ĐỊNH DẠNG NÚT (Hoàn toàn nằm dưới giá) */
+  /* ĐỊNH DẠNG NÚT  */
 }
 .product-card .add-to-cart-hover {
   position: absolute;
@@ -713,7 +713,7 @@ body {
 }
 
 /* ==========================================================================
-   NEWS SECTION (Cập nhật hỗ trợ Link & Hiệu ứng)
+   NEWS SECTION 
    ========================================================================== */
 .news-section {
   display: block !important;
@@ -820,7 +820,7 @@ body {
 }
 
 /* ==========================================================================
-   FOOTER STYLE - KẾT THÚC DỰ ÁN
+   FOOTER STYLE
    ========================================================================== */
 .footer {
   background-color: #fff;
@@ -897,7 +897,7 @@ body {
 
 /* 1. Nền trang đăng nhập */
 .login-page {
-  background-color: #E0AD3B; /* Màu vàng rực rỡ */
+  background-color: #E0AD3B;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -906,10 +906,10 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-/* 2. Hộp đăng nhập Glassmorphism */
+/* 2. Hộp đăng nhập  */
 .login-container {
-  background: rgba(255, 255, 255, 0.2); /* Độ trong suốt */
-  backdrop-filter: blur(10px); /* Làm mờ hậu cảnh */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 20px;
@@ -963,7 +963,7 @@ body {
 }
 
 .btn-login {
-  background-color: #2d7a0c; /* Màu xanh lá đậm */
+  background-color: #2d7a0c;
   color: white;
   border: none;
   padding: 12px 35px;
@@ -984,7 +984,7 @@ body {
   font-size: 14px;
 }
 
-/* 6. Ngăn cách (Separator) */
+/* 6. Ngăn cách  */
 .separator {
   margin: 30px 0;
   position: relative;
@@ -996,7 +996,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #f9d423; /* Trùng màu nền */
+  background: #f9d423;
   padding: 0 15px;
   font-size: 13px;
   border-radius: 20px;
@@ -1910,14 +1910,12 @@ body {
 .product-detail-page .container {
   display: block;
   width: 100%;
-  max-width: 1200px; /* KHÓA CHẾ ĐỘ: Giữ khung luôn đẹp trên PC màn hình lớn */
-  margin: 0 auto; /* Căn giữa toàn bộ nội dung ra giữa màn hình */
-  padding: 0 15px; /* Khoảng an toàn hai bên cạnh màn hình */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 .product-detail-page {
-  /* ============================================================
-     1. CẤU HÌNH GIAO DIỆN MẶC ĐỊNH (LAPTOP / PC THÔNG THƯỜNG)
-     ============================================================ */
+  /* 1. CẤU HÌNH GIAO DIỆN MẶC ĐỊNH  */
 }
 .product-detail-page .breadcrumb-wrapper {
   background: #fff;
@@ -2203,24 +2201,24 @@ body {
     padding: 20px 0 60px;
   }
   .product-detail-page .product-main-wrapper {
-    padding: 25px; /* Giảm nhẹ không gian đệm của khối trắng */
+    padding: 25px;
   }
   .product-detail-page .detail-grid {
-    gap: 25px; /* Thu hẹp khoảng cách giữa ảnh và chữ để không bị tràn màn hình */
+    gap: 25px;
   }
   .product-detail-page .detail-grid .detail-title {
-    font-size: 20px; /* Chữ nhỏ lại một chút cho cân xứng */
+    font-size: 20px;
     margin-bottom: 15px;
   }
   .product-detail-page .detail-grid .detail-right .price-box {
-    font-size: 28px; /* Hạ size chữ của hộp giá tiền */
+    font-size: 28px;
     padding: 15px 20px;
   }
   .product-detail-page .detail-grid .detail-right .action-buttons {
     gap: 10px;
   }
   .product-detail-page .detail-grid .detail-right .action-buttons button {
-    height: 46px; /* Hạ nhẹ chiều cao nút bấm */
+    height: 46px;
     font-size: 13px;
   }
 }
@@ -2247,7 +2245,7 @@ body {
   }
   .product-detail-page .detail-left img {
     width: 100% !important;
-    max-width: 340px; /* Khống chế kích thước ảnh tối đa trên điện thoại */
+    max-width: 340px;
     height: auto !important;
     margin: 0 auto;
   }
@@ -2261,7 +2259,7 @@ body {
     text-align: center;
   }
   .product-detail-page .detail-right .quantity-wrapper {
-    justify-content: center; /* Đưa bộ đếm số lượng ra giữa */
+    justify-content: center;
   }
   .product-detail-page .detail-right .action-buttons {
     gap: 10px !important;
@@ -2274,7 +2272,6 @@ body {
   }
 }
 
-/* 1. RESET CƠ BẢN */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -2286,7 +2283,7 @@ body {
   font-family: sans-serif;
 }
 
-/* 2. TOPBAR - KHÓA CHẾ ĐỘ DÀN HÀNG NGANG */
+/* 2. TOPBAR */
 .admin-topbar {
   display: flex !important;
   justify-content: space-between;
@@ -2328,7 +2325,7 @@ body {
   font-weight: bold;
 }
 
-/* 1. NÚT HAMBURGER (Mặc định ẩn trên PC) */
+/* 1. NÚT HAMBURGER */
 .menu-toggle {
   display: none;
   background: none;
@@ -2431,7 +2428,7 @@ body {
   font-family: sans-serif;
 }
 
-/* 6. CẤU HÌNH BẢNG (Chống tràn, chống cắt chữ) */
+/* 6. CẤU HÌNH BẢNG  */
 .table-container, .table-responsive-wrapper {
   width: 100%;
   overflow-x: auto !important;
@@ -2446,7 +2443,7 @@ body {
 .product-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 800px !important; /* Ép bảng đủ rộng trên mobile */
+  min-width: 800px !important;
   table-layout: auto;
 }
 
@@ -2455,12 +2452,12 @@ body {
   text-align: left;
   border-bottom: 1px solid #eee;
   vertical-align: middle;
-  white-space: normal !important; /* Cho phép chữ xuống dòng */
+  white-space: normal !important;
   word-wrap: break-word;
 }
 
 /* ============================================================
-   RESPONSIVE TOÀN DIỆN 
+   RESPONSIVE 
    ============================================================ */
 /* TABLET */
 @media (max-width: 1024px) {
@@ -2477,7 +2474,7 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 }
-/* MOBILE (Gộp tất cả vào 1 block duy nhất) */
+/* MOBILE  */
 @media (max-width: 768px) {
   /* TOPBAR */
   .admin-topbar {
@@ -2502,7 +2499,7 @@ body {
     width: auto;
   }
   .header-user span {
-    display: none; /* Ẩn tên admin cho rộng chỗ */
+    display: none;
   }
   .user-avatar {
     margin: 0;
@@ -2530,7 +2527,7 @@ body {
   .admin-main-layout {
     display: block !important;
     width: 100% !important;
-    overflow-x: visible !important; /* LƯU Ý: Phải là visible để bảng trượt được */
+    overflow-x: visible !important;
   }
   .admin-content {
     padding: 15px !important;
@@ -2590,7 +2587,7 @@ body {
   min-height: calc(100vh - 70px);
 }
 
-/* Container cho Form - Đã chỉnh lại tỉ lệ 2:1 chuẩn mẫu */
+/* Container cho Form  */
 .product-form-container {
   display: flex;
   gap: 30px;
@@ -2606,12 +2603,10 @@ body {
   border: 1px solid #eee;
 }
 
-/* Khung bên trái rộng hơn (Chiếm 2 phần) */
 .main-form {
   flex: 2;
 }
 
-/* Khung bên phải nhỏ lại (Chiếm 1 phần) */
 .image-upload-card {
   flex: 1;
   position: static;
@@ -2723,7 +2718,7 @@ body {
   cursor: pointer;
 }
 
-/* Upload Area - CANH GIỮA HOÀN HẢO */
+/* Upload Area  */
 .upload-area {
   border: 2px dashed #ddd;
   background: #fafafa;
@@ -2742,9 +2737,9 @@ body {
 
 .upload-content {
   display: flex;
-  flex-direction: column; /* Xếp dọc: Mây -> Nút -> Chữ */
-  align-items: center; /* Canh giữa ngang */
-  justify-content: center; /* Canh giữa dọc */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 15px;
 }
 
@@ -2903,7 +2898,7 @@ body {
   margin-left: 5px;
 }
 
-/* Nút xóa đỏ chót như hình mẫu */
+/* Nút xóa */
 .btn-delete-item {
   background: #e74c3c;
   color: white;
@@ -2923,9 +2918,6 @@ body {
   transform: scale(1.05);
 }
 
-/* ============================================================
-   FILE: _LABS.SCSS (Chỉ chứa giao diện danh sách Lab)
-   ============================================================ */
 .lab-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -3008,12 +3000,9 @@ body {
   background-color: #218838;
 }
 
-/* ============================================================
-   FILE: _ABOUT.SCSS (Định dạng trang Giới thiệu)
-   ============================================================ */
 /* Thanh điều hướng chính của người dùng */
 .user-navbar {
-  background-color: #E0AD3B; /* Màu xanh lá như mẫu */
+  background-color: #E0AD3B;
   padding: 0;
   font-family: sans-serif;
 }
@@ -3054,7 +3043,6 @@ body {
   background-color: #E0AD3B;
 }
 
-/* Tách biệt bố cục trang About */
 .about-page-layout {
   display: flex;
   gap: 35px;
@@ -3064,14 +3052,11 @@ body {
 }
 @media (max-width: 992px) {
   .about-page-layout {
-    flex-direction: column; /* Bẻ dọc khi thu nhỏ màn hình */
+    flex-direction: column;
   }
 }
-.about-page-layout {
-  /* Chuỗi banner bên trái */
-}
 .about-page-layout .about-sidebar-banners {
-  flex: 0 0 300px; /* Cố định chiều rộng cột banner */
+  flex: 0 0 300px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -3079,7 +3064,7 @@ body {
 @media (max-width: 992px) {
   .about-page-layout .about-sidebar-banners {
     flex: none;
-    flex-direction: row; /* Tablet nằm ngang */
+    flex-direction: row;
     flex-wrap: wrap;
   }
 }
@@ -3091,12 +3076,12 @@ body {
 }
 @media (max-width: 992px) {
   .about-page-layout .about-sidebar-banners .promo-banner {
-    width: calc(50% - 8px); /* Chia đôi trên tablet */
+    width: calc(50% - 8px);
   }
 }
 @media (max-width: 576px) {
   .about-page-layout .about-sidebar-banners .promo-banner {
-    width: 100%; /* Full dòng trên điện thoại */
+    width: 100%;
   }
 }
 .about-page-layout .about-sidebar-banners .promo-banner img {
@@ -3104,9 +3089,6 @@ body {
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
-}
-.about-page-layout {
-  /* Phần nội dung text bên phải */
 }
 .about-page-layout .about-main-content {
   flex: 1;
@@ -3131,9 +3113,6 @@ body {
   margin: 35px 0 20px;
   font-weight: 700;
 }
-.about-page-layout .about-main-content {
-  /* List chức năng dùng dấu gạch ngang đầu dòng */
-}
 .about-page-layout .about-main-content .features-done-list {
   list-style: none;
   padding: 0;
@@ -3151,9 +3130,6 @@ body {
   left: 0;
   color: #4a5568;
   font-weight: bold;
-}
-.about-page-layout .about-main-content .features-done-list li {
-  /* Nút chữ "Xem demo" màu xanh lá đặc trưng */
 }
 .about-page-layout .about-main-content .features-done-list li .demo-link {
   color: #E0AD3B;

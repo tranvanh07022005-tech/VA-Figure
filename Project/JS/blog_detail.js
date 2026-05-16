@@ -2,12 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const blogId = urlParams.get('id');
 
-    // Kiểm tra xem newsData đã được nạp từ data.js chưa
     if (typeof newsData !== 'undefined' && blogId) {
         const blog = newsData.find(item => item.id === blogId);
 
         if (blog) {
-            // 1. Cập nhật các thông tin cơ bản
             document.getElementById('blog-title').textContent = blog.title;
             document.getElementById('blog-author').innerHTML = `Đăng bởi: <strong>${blog.author}</strong>`;
             document.getElementById('blog-date').textContent = blog.date;
@@ -15,14 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const contentArea = document.getElementById('blog-detail-body'); 
             if (contentArea) {
-                // 2. Xử lý ảnh đại diện (Main Image)
                 let mainImageHtml = '';
                 if (blog.img) {
-                    // Tạo thẻ img cho ảnh đại diện bài viết
                     mainImageHtml = `<img src="${blog.img}" alt="${blog.title}" class="main-detail-img">`;
                 }
 
-                // 3. Hiển thị ảnh đại diện kết hợp với nội dung bài viết
                 contentArea.innerHTML = mainImageHtml + blog.content;
             }
         } 

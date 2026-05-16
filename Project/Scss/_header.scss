@@ -12,7 +12,7 @@ header {
 
         // Responsive cho Máy tính bảng & Điện thoại
         @media (max-width: 768px) {
-            flex-direction: column; // Xếp chồng các thành phần theo chiều dọc
+            flex-direction: column; 
             gap: 15px;
             padding: 10px;
         }
@@ -28,7 +28,7 @@ header {
             transition: $transition;
 
             @media (max-width: 768px) {
-                height: 70px; // Thu nhỏ logo trên điện thoại cho cân đối
+                height: 70px; 
             }
         }
     }
@@ -41,7 +41,7 @@ header {
 
         @media (max-width: 768px) {
             width: 100%; 
-            order: 3; // Đẩy thanh tìm kiếm xuống dưới cùng trong header trên mobile
+            order: 3; 
         }
 
         input {
@@ -72,8 +72,8 @@ header {
 
         @media (max-width: 768px) {
             width: 100%;
-            justify-content: center; // Căn giữa Đăng nhập/Giỏ hàng trên mobile
-            order: 2; // Nằm giữa logo và thanh tìm kiếm
+            justify-content: center; 
+            order: 2; 
         }
 
         .login-link, .cart-btn-link {
@@ -130,6 +130,6 @@ header {
     position: sticky;
     top: 0;
     width: 100%;
-    z-index: 1000; // Đảm bảo header luôn nằm trên các thành phần khác
+    z-index: 1000; 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }

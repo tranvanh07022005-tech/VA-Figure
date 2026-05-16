@@ -1,14 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Chạy render Cart khi trang load
     renderCart();
 });
 
-// Hàm chính để vẽ giỏ hàng ra màn hình (Đã Rewrite hoàn toàn)
 function renderCart() {
     const container = document.getElementById('cart-items-render');
     const totalItemsText = document.getElementById('total-items');
     const finalTotalText = document.getElementById('final-total-price');
-    const wrapper = document.querySelector('.cart-items-wrapper'); // Chỗ chứa list
+    const wrapper = document.querySelector('.cart-items-wrapper'); 
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -68,9 +66,7 @@ function renderCart() {
     updateCartBadge();
 }
 
-/**
- * Hàm thay đổi số lượng sản phẩm trong giỏ (tăng/giảm)
- */
+
 function changeCartQty(id, amount) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const product = cart.find(item => item.id === id);
@@ -78,36 +74,29 @@ function changeCartQty(id, amount) {
     if (product) {
         product.quantity += amount;
         
-        // Nếu số lượng về 0 thì xóa luôn sản phẩm
         if (product.quantity <= 0) {
             return removeItem(id);
         }
 
-        // Lưu lại và vẽ lại giao diện dạng Card
         localStorage.setItem('cart', JSON.stringify(cart));
         renderCart();
     }
 }
 
-/**
- * Hàm xóa sản phẩm khỏi giỏ (Define removeItem(id) functional)
- */
+
 function removeItem(id) {
     if (confirm("Bạn chắc chắn muốn bỏ sản phẩm này khỏi giỏ hàng?")) {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         cart = cart.filter(item => item.id !== id);
         
-        // Lưu lại và vẽ lại giao diện dạng Card
         localStorage.setItem('cart', JSON.stringify(cart));
         renderCart(); 
     }
 }
 
-/**
- * Hàm sync badge số lượng trên header (Gộp lại cho functional)
- */
+
 function updateCartBadge() {
-    const badge = document.querySelector('.cart-count'); // Đảm bảo target đúng `.cart-count` như `cart.html`
+    const badge = document.querySelector('.cart-count'); 
     if (badge) {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         const total = cart.reduce((sum, item) => sum + item.quantity, 0);

@@ -67,7 +67,6 @@
     </div>
 
     <script>
-        // Data 32 sản phẩm của chủ nhân Trương Thành Đạt
         const products = [
             { id: 'sp-01', img: 'Images/51RPkzAjDML._AC_SX679_.jpg', title: 'Mô hình Shimoe Koharu 22cm PVC', price: '180.000đ', old: '' },
             { id: 'sp-02', img: 'Images/s-l960.webp', title: 'Mô hình Honkai: Star Rail Jingliu 38cm PVC', price: '550.000đ', old: '' },
@@ -106,7 +105,6 @@
         const tbody = document.getElementById('product-list-body');
 
 products.forEach(p => {
-    // Tạo đường dẫn kèm thông tin sản phẩm (mã hóa URL để tránh lỗi ký tự đặc biệt)
     const editUrl = `add_product.html?name=${encodeURIComponent(p.title)}&price=${p.price.replace(/\D/g,'')}&sale=${p.old.replace(/\D/g,'')}&img=${encodeURIComponent(p.img)}`;
 
     const row = `

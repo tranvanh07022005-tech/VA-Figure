@@ -1,10 +1,7 @@
-/* ============================================================
-   FILE: _ABOUT.SCSS (Định dạng trang Giới thiệu)
-   ============================================================ */
 
 /* Thanh điều hướng chính của người dùng */
 .user-navbar {
-    background-color: #E0AD3B; /* Màu xanh lá như mẫu */
+    background-color: #E0AD3B; 
     padding: 0;
     font-family: sans-serif;
 
@@ -50,7 +47,7 @@
     }
 }
 
-/* Tách biệt bố cục trang About */
+
 .about-page-layout {
     display: flex;
     gap: 35px;
@@ -59,19 +56,19 @@
     padding: 0 15px;
 
     @media (max-width: 992px) {
-        flex-direction: column; /* Bẻ dọc khi thu nhỏ màn hình */
+        flex-direction: column; 
     }
 
-    /* Chuỗi banner bên trái */
+
     .about-sidebar-banners {
-        flex: 0 0 300px; /* Cố định chiều rộng cột banner */
+        flex: 0 0 300px; 
         display: flex;
         flex-direction: column;
         gap: 15px;
 
         @media (max-width: 992px) {
             flex: none;
-            flex-direction: row; /* Tablet nằm ngang */
+            flex-direction: row; 
             flex-wrap: wrap;
         }
 
@@ -82,10 +79,10 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 
             @media (max-width: 992px) {
-                width: calc(50% - 8px); /* Chia đôi trên tablet */
+                width: calc(50% - 8px); 
             }
             @media (max-width: 576px) {
-                width: 100%; /* Full dòng trên điện thoại */
+                width: 100%; 
             }
 
             img {
@@ -96,7 +93,6 @@
         }
     }
 
-    /* Phần nội dung text bên phải */
     .about-main-content {
         flex: 1;
         font-family: sans-serif;
@@ -123,7 +119,6 @@
             font-weight: 700;
         }
 
-        /* List chức năng dùng dấu gạch ngang đầu dòng */
         .features-done-list {
             list-style: none;
             padding: 0;
@@ -143,7 +138,6 @@
                     font-weight: bold;
                 }
 
-                /* Nút chữ "Xem demo" màu xanh lá đặc trưng */
                 .demo-link {
                     color: #E0AD3B;
                     text-decoration: none;

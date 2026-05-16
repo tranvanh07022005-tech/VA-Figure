@@ -1,14 +1,12 @@
 .slider-container {
     position: relative;
     width: 100%;
-    height: 100%; // SỬA: Đi theo chiều cao của khối .banner
-    
-    // Tăng tỷ lệ lên 16 / 7.5 để banner cao hơn, cân bằng với bảng tin tức
+    height: 100%; 
     aspect-ratio: 16 / 7.5; 
     overflow: hidden;
 
     @media (max-width: 768px) {
-        aspect-ratio: 16 / 9; // Tỷ lệ trên điện thoại
+        aspect-ratio: 16 / 9; 
     }
 
     .slide {
@@ -26,26 +24,25 @@
             width: 100%;
             height: 100%;
             object-fit: cover; 
-            // FIX: Ưu tiên hiển thị phần trên của ảnh để không bị mất đầu Figure
             object-position: center top; 
             display: block;
         }
     }
 }
 
-// KHÔI PHỤC NÚT BẤM (Cần z-index cao để không bị hình ảnh che)
+// NÚT BẤM 
 .prev-btn, .next-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.4); // Làm đậm hơn một chút cho dễ thấy
+    background: rgba(0, 0, 0, 0.4); 
     color: white;
     border: none;
-    width: 45px;  // Đặt kích thước cố định cho nút
+    width: 45px;  
     height: 45px;
     cursor: pointer;
     border-radius: 50%;
-    z-index: 50;  // QUAN TRỌNG: Phải cao hơn các slide
+    z-index: 50;  
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,28 +64,27 @@
 /* --- KHUNG CHỨA CÁC DẤU CHẤM --- */
 .dots {
     position: absolute;
-    bottom: 20px; // Cách đáy banner 20px
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 12px;
-    z-index: 60; // SỬA: Phải cao hơn slide để không bị che mất
+    z-index: 60; 
 
     @media (max-width: 768px) {
-        bottom: 12px; // Trên iPhone thì đẩy lên một chút cho thoáng
+        bottom: 12px;
     }
 
     .dot {
         width: 10px;
         height: 10px;
-        // SỬA: Dùng màu xám mờ để dễ thấy trên cả nền sáng và tối
         background: rgba(0, 0, 0, 0.2); 
         border-radius: 50%;
         cursor: pointer;
         transition: all 0.3s ease;
 
         &.active { 
-            // Khi active thì hiện màu nổi bật (màu vàng thương hiệu của Đạt)
+            
             background: $primary-hover; 
             transform: scale(1.3);
             box-shadow: 0 0 8px rgba(0,0,0,0.2);

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PRODUCT GRID SYSTEM (Chuẩn Layout + Không vỡ giao diện)
+   PRODUCT GRID SYSTEM 
    ========================================================================== */
 
 .new-products-section, 
@@ -50,11 +50,10 @@
     border: 3px solid $primary-color;
     border-radius: 8px;
     padding: 10px;
-    // TẠO KHÔNG GIAN CỐ ĐỊNH Ở ĐÁY THẺ CHO NÚT BẤM
     padding-bottom: 60px; 
     display: flex;
     flex-direction: column;
-    height: 100%; // Đảm bảo các thẻ đều nhau
+    height: 100%;
     transition: all 0.3s ease;
 
     &:hover {
@@ -130,7 +129,7 @@
             font-size: 15px;
             font-weight: 700;
             color: #4a90bc;
-            margin-top: auto; // Đẩy giá xuống đáy của phần link
+            margin-top: auto; 
             
             .old-price {
                 font-size: 12px; color: #999;
@@ -139,12 +138,12 @@
         }
     }
 
-    /* ĐỊNH DẠNG NÚT (Hoàn toàn nằm dưới giá) */
+    /* ĐỊNH DẠNG NÚT  */
     .add-to-cart-hover {
         position: absolute;
-        bottom: 12px; // Nằm gọn trong vùng padding-bottom: 60px
+        bottom: 12px; 
         left: 50%;
-        transform: translateX(-50%) translateY(15px); // Trạng thái ẩn, tụt xuống dưới
+        transform: translateX(-50%) translateY(15px); 
         opacity: 0;
         visibility: hidden;
         
@@ -152,7 +151,7 @@
         color: #fff;
         border: none;
         padding: 10px 0;
-        width: calc(100% - 20px); // Rộng bằng thẻ card trừ khoảng lề
+        width: calc(100% - 20px);
         border-radius: 25px;
         font-size: 13px;
         font-weight: 700;

@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Sidebar toggle
     const filterTitles = document.querySelectorAll('.group-title');
     filterTitles.forEach(title => {
         title.addEventListener('click', () => {
@@ -7,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Lọc sản phẩm
     function updateShopContent() {
         const urlParams = new URLSearchParams(window.location.search);
         let category = urlParams.get('cat');
@@ -43,23 +41,19 @@ document.addEventListener('DOMContentLoaded', () => {
     updateShopContent();
     window.addEventListener('popstate', updateShopContent);
 
-    // 3. Sự kiện Thêm vào giỏ (Hỗ trợ cả Index và Cửa Hàng)
     const addButtons = document.querySelectorAll('.add-to-cart-hover');
     addButtons.forEach(button => {
         button.addEventListener('click', (e) => {
-            // Chặn chuyển trang tuyệt đối
             e.preventDefault();
             e.stopPropagation();
 
             let productId = button.getAttribute('data-id');
 
-            // Nếu không có data-id, tự động bóc tách ID từ thẻ <a> bao quanh nó
             if (!productId) {
                 const parentCard = button.closest('.product-card') || button.closest('.shop-item');
                 if (parentCard) {
                     const link = parentCard.querySelector('a');
                     if (link && link.getAttribute('href')) {
-                        // Tương thích với cách viết link của bạn
                         const queryString = link.getAttribute('href').split('?')[1];
                         if (queryString) {
                             productId = new URLSearchParams(queryString).get('id');
@@ -76,11 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Cập nhật số lượng giỏ hàng khi load trang
     updateCartBadge();
 });
 
-// Cập nhật hàm addToCart để nhận thêm số lượng (mặc định là 1)
 function addToCart(id, event = null, quantityToAdd = 1) {
     if (event) {
         event.preventDefault();
@@ -99,10 +91,8 @@ function addToCart(id, event = null, quantityToAdd = 1) {
         const existingItem = cart.find(item => item.id === id);
         
         if (existingItem) {
-            // Cộng thêm số lượng người dùng đã chọn
             existingItem.quantity += quantityToAdd;
         } else {
-            // Thêm mới với số lượng người dùng chọn
             cart.push({ ...product, quantity: quantityToAdd });
         }
 
@@ -117,7 +107,6 @@ function addToCart(id, event = null, quantityToAdd = 1) {
     }
 }
 
-// Cập nhật số lượng hiển thị trên giỏ hàng
 function updateCartBadge() {
     const badge = document.querySelector('.cart-count') || document.querySelector('.cart-badge');
     if (badge) {

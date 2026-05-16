@@ -10,14 +10,12 @@
 <body>
     <header>
     <div class="container header-content">
-        <!-- Logo -->
        <div class="logo">
             <a href="index.html">
                 <img src="Images/Screenshot 2026-05-01 134410.png" alt="VA Figure">
             </a>
         </div>
         
-        <!-- Thanh tìm kiếm -->
         <div class="search-box">
             <input type="text" placeholder="Tìm kiếm sản phẩm...">
             <button type="submit">
@@ -25,16 +23,13 @@
             </button>
         </div>
 
-        <!-- Cụm chức năng -->
         <div class="header-icons">
             <div class="user-actions">
-                <!-- Nút Đăng nhập -->
                 <a href="login.html" class="login-link">
                     <i class="fa-regular fa-user"></i>
                     <span>Đăng nhập</span>
                 </a>
 
-                <!-- Nút Giỏ hàng -->
                 <a href="cart.html" class="cart-btn-link">
                     <div class="cart-btn">
                         <span class="cart-icon-wrapper">
@@ -50,16 +45,13 @@
 </header>
     <div class="sticky-header-container">
         <nav class="main-nav">
-            <!-- Nút Menu Hamburger cho Mobile/Tablet -->
             <button class="menu-toggle" id="menu-toggle">
                 <i class="fa-solid fa-bars"></i>
             </button>
 
             <ul class="container" id="nav-list">
-                        <!-- 1. Cửa hàng -->
                         <li><a href="shop.html?cat=Cửa Hàng">Cửa Hàng</a></li>
 
-                        <!-- 2. Mục Mô Hình -->
                         <li class="has-submenu">
                             <a href="shop.html?cat=Mô Hình">Mô Hình <i class="fa-solid fa-chevron-down"></i></a>
                             <ul class="submenu">
@@ -68,7 +60,6 @@
                             </ul>
                         </li>
 
-                        <!-- 3. Mục Nendoroid -->
                         <li class="has-submenu">
                             <a href="shop.html?cat=Nendoroid">Nendoroid <i class="fa-solid fa-chevron-down"></i></a>
                             <ul class="submenu">
@@ -77,15 +68,12 @@
                             </ul>
                         </li>
 
-                        <!-- 4. Các mục đơn khác -->
                         <li><a href="shop.html?cat=Pack Card">Pack Card</a></li>
                         <li><a href="shop.html?cat=Blind Box">Blind Box</a></li>
                         <li><a href="shop.html?cat=Phụ Kiện Khác">Phụ Kiện Khác</a></li>
                         
-                        <!-- 5. Thẻ Tin Tức mới thêm vào đây -->
                         <li><a href="blogs.html">Tin Tức</a></li>
                         
-                        <!-- 6. Liên hệ -->
                         <li><a href="lab_thuc_hanh.html">Lab Thực Hành</a></li>
 
                         <li><a href="about_us.html">Về Chúng Tôi</a></li>
@@ -175,13 +163,11 @@
 </main>
     <footer class="footer">
     <div class="container footer-content">
-        <!-- Cột 1: Logo và mô tả -->
         <div class="footer-col logo-col">
             <img src="Images\Screenshot 2026-05-01 134410.png" alt="VA FIGURE LOGO" class="footer-logo">
             <p class="footer-desc">VA Figure đồ án website bán mô hình anime cuối kì môn học thực hành nhập môn web</p>
         </div>
 
-        <!-- Cột 2: Thông tin liên hệ -->
         <div class="footer-col info-col">
             <h3>Thông tin</h3>
             <p><strong>Địa chỉ:</strong> 180 Cao Lỗ, Phường 4, Quận 8, TP. Hồ Chí Minh</p>
@@ -189,7 +175,6 @@
             <p><strong>Điện thoại:</strong> (028) 38 505 520</p>
         </div>
 
-        <!-- Cột 3: Bản đồ Google Maps -->
         <div class="footer-col map-col">
             <div class="map-embed">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.9544104258835!2d106.67525717480439!3d10.73799718940847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f62a90e5dbd%3A0x674d5126513db295!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgU8OgaSBHw7Ju!5e0!3m2!1svi!2s!4v1777710502763!5m2!1svi!2s" 
@@ -198,7 +183,6 @@
         </div>
     </div>
 
-    <!-- Dòng kẻ ngang và Thông tin sinh viên -->
     <div class="footer-bottom">
         <div class="container">
             <hr class="footer-divider">
@@ -209,11 +193,8 @@
 <button id="backToTop" class="back-to-top" title="Lên đầu trang">
     <i class="fa-solid fa-chevron-up"></i>
 </button>
-<!-- 1. Dữ liệu gốc -->
     <script src="js/data.js"></script>
-    <!-- 2. Logic chung (cập nhật số lượng badge) -->
     <script src="js/shop.js"></script>
-    <!-- 3. Logic riêng cho trang giỏ hàng -->
     <script src="js/cart.js"></script>
 </body>
 </html>

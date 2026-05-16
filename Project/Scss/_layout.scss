@@ -2,11 +2,11 @@
     margin: 40px auto;
     display: flex;
     gap: 25px;
-    align-items: stretch; // SỬA: Giúp Banner và Sidebar cố gắng cao bằng nhau
+    align-items: stretch; 
 
     @media (max-width: 768px) {
         flex-direction: column;
-        align-items: flex-start; // Trở về mặc định trên điện thoại
+        align-items: flex-start; 
     }
 
     .banner {
@@ -16,7 +16,7 @@
         border-radius: 15px;
         overflow: hidden;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        position: relative; // Đảm bảo nút bấm định vị đúng
+        position: relative;
 
         @media (max-width: 768px) {
             max-width: 100%;
@@ -34,23 +34,18 @@
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    
-    // Đẩy z-index lên cao nhất để không bị đè
     z-index: 9999;
-    
-    // Sử dụng Flexbox để căn giữa icon
     display: flex;
     justify-content: center;
     align-items: center;
     
-    // Hiệu ứng ẩn hiện mượt mà
+    // Hiệu ứng ẩn hiện 
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 
-    // Class kích hoạt khi cuộn xuống
     &.show {
         opacity: 1;
         visibility: visible;

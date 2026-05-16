@@ -1,7 +1,7 @@
 .categories-grid {
     margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); // Chia 3 cột đều nhau
+    grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
 
     .category-card {
@@ -26,7 +26,7 @@
         }
     }
 
-    // Tự động chuyển thành 1 cột khi xem trên điện thoại
+
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
     }

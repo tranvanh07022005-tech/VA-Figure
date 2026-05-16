@@ -1,23 +1,20 @@
 // ----------------------------------------------------
-// TRANG CHI TIẾT SẢN PHẨM - ĐỒNG BỘ TOÀN DIỆN THIẾT BỊ
+// TRANG CHI TIẾT SẢN PHẨM 
 // ----------------------------------------------------
 .product-detail-page {
-    background-color: #f4f7f9; // Nền xám nhạt toàn trang
+    background-color: #f4f7f9;
     padding: 30px 0 80px;
 
     // KHUNG CHỨA TRUNG TÂM (Tối ưu cho Laptop/PC)
     .container {
         display: block; 
         width: 100%;
-        max-width: 1200px; /* KHÓA CHẾ ĐỘ: Giữ khung luôn đẹp trên PC màn hình lớn */
-        margin: 0 auto;    /* Căn giữa toàn bộ nội dung ra giữa màn hình */
-        padding: 0 15px;   /* Khoảng an toàn hai bên cạnh màn hình */
+        max-width: 1200px; 
+        margin: 0 auto;    
+        padding: 0 15px;   
     }
 
-    /* ============================================================
-       1. CẤU HÌNH GIAO DIỆN MẶC ĐỊNH (LAPTOP / PC THÔNG THƯỜNG)
-       ============================================================ */
-
+    /* 1. CẤU HÌNH GIAO DIỆN MẶC ĐỊNH  */
     // Khung Breadcrumb đường dẫn
     .breadcrumb-wrapper {
         background: #fff;
@@ -59,10 +56,9 @@
         }
     }
 
-    // Lưới thông tin 2 cột trên PC/Laptop
     .detail-grid {
         display: flex;
-        gap: 45px; // Khoảng cách rộng rãi sang trọng trên PC
+        gap: 45px; 
         
         .detail-left {
             flex: 1;
@@ -271,27 +267,27 @@
         padding: 20px 0 60px;
 
         .product-main-wrapper {
-            padding: 25px; /* Giảm nhẹ không gian đệm của khối trắng */
+            padding: 25px; 
         }
 
         .detail-grid {
-            gap: 25px; /* Thu hẹp khoảng cách giữa ảnh và chữ để không bị tràn màn hình */
+            gap: 25px; 
             
             .detail-title {
-                font-size: 20px; /* Chữ nhỏ lại một chút cho cân xứng */
+                font-size: 20px; 
                 margin-bottom: 15px;
             }
 
             .detail-right {
                 .price-box {
-                    font-size: 28px; /* Hạ size chữ của hộp giá tiền */
+                    font-size: 28px; 
                     padding: 15px 20px;
                 }
 
                 .action-buttons {
                     gap: 10px;
                     button {
-                        height: 46px; /* Hạ nhẹ chiều cao nút bấm */
+                        height: 46px; 
                         font-size: 13px;
                     }
                 }
@@ -309,7 +305,7 @@
             padding: 20px 15px;
         }
 
-        // Bẻ lưới hàng ngang thành hàng dọc để ảnh to ra hết cỡ
+        
         .detail-grid {
             flex-direction: column !important;
             gap: 30px !important;
@@ -322,7 +318,7 @@
 
             img {
                 width: 100% !important;
-                max-width: 340px; /* Khống chế kích thước ảnh tối đa trên điện thoại */
+                max-width: 340px; 
                 height: auto !important;
                 margin: 0 auto;
             }
@@ -339,7 +335,7 @@
             }
 
             .quantity-wrapper {
-                justify-content: center; /* Đưa bộ đếm số lượng ra giữa */
+                justify-content: center;
             }
 
             .action-buttons {

@@ -1,9 +1,4 @@
-/**
- * BẢN CẬP NHẬT TỐI THƯỢNG - ĐẦY ĐỦ BẪY LỖI GIÁ ÂM
- * Đã sửa: Tự động tắt cảnh báo khi gõ, hiện bong bóng tại ô, và chặn giá âm 100%.
- */
 
-// 1. Hàm hiển thị ảnh preview
 function handleFiles(files) {
     const gallery = document.getElementById("gallery");
     const uploadContent = document.querySelector(".upload-content");
@@ -24,7 +19,7 @@ function handleFiles(files) {
     }
 }
 
-// 2. Hàm Toast thông báo (Chỉ hiện khi thành công)
+
 function showToast(message, type) {
     const toast = document.createElement('div');
     toast.className = 'toast-msg';
@@ -38,12 +33,10 @@ function showToast(message, type) {
     }, 3000);
 }
 
-// 3. Khởi tạo khi DOM sẵn sàng
 document.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams(window.location.search);
     const btnSave = document.querySelector('.btn-save');
 
-    // --- A. TỰ ĐỘNG ĐIỀN DỮ LIỆU TỪ URL ---
     const nameValue = params.get('name');
     if (nameValue) {
         const prodInput = document.getElementById('prod-name');
@@ -68,12 +61,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // --- B. XỬ LÝ NÚT LƯU & BẪY LỖI (GIÁ ÂM + TRỐNG) ---
     if (btnSave) {
         btnSave.addEventListener('click', function(e) {
             e.preventDefault(); 
 
-            // 3.1. Danh sách ô bắt buộc (Không được trống)
             const requiredFields = [
                 { id: 'prod-name', msg: 'Vui lòng điền tên sản phẩm' },
                 { id: 'prod-price', msg: 'Vui lòng điền giá bán' },
@@ -89,13 +80,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     el.setCustomValidity(""); 
                     if (!el.value.trim()) {
                         el.setCustomValidity(field.msg);
-                        el.reportValidity(); // Hiện bong bóng
+                        el.reportValidity(); 
                         return; 
                     }
                 }
             }
 
-            // 3.2. KIỂM TRA GIÁ ÂM (PHẦN ANH XÃ HỎI ĐÂY NÈ!)
             const priceElem = document.getElementById('prod-price');
             const saleElem = document.getElementById('prod-sale');
 
@@ -111,12 +101,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // 3.3. Thành công
             showToast("Đã lưu thành công! ", "success");
         });
     }
 
-    // --- C. XÓA CẢNH BÁO NGAY KHI GÕ PHÍM ---
     const allInputs = document.querySelectorAll('input, textarea');
     allInputs.forEach(input => {
         input.addEventListener('input', function() {
@@ -131,20 +119,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const overlay = document.getElementById('sidebar-overlay');
 
     if (menuToggle && sidebar && overlay) {
-        // Hàm bật/tắt menu
         function toggleMenu() {
             sidebar.classList.toggle('active');
             overlay.classList.toggle('active');
-            // Đổi icon từ 3 gạch sang dấu X cho oai
             const icon = menuToggle.querySelector('i');
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-times');
         }
 
-        // Click vào nút hamburger
         menuToggle.addEventListener('click', toggleMenu);
 
-        // Click vào lớp phủ hoặc chọn một mục menu thì đóng lại
         overlay.addEventListener('click', toggleMenu);
         
         const navItems = document.querySelectorAll('.nav-item');
@@ -162,20 +146,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const overlay = document.getElementById('sidebar-overlay');
 
     if (menuToggle && sidebar && overlay) {
-        // Mở menu
         menuToggle.addEventListener('click', function(e) {
             e.preventDefault();
             sidebar.classList.add('active');
             overlay.classList.add('active');
         });
 
-        // Đóng menu khi bấm vào lớp phủ mờ
         overlay.addEventListener('click', function() {
             sidebar.classList.remove('active');
             overlay.classList.remove('active');
         });
 
-        // Đóng menu khi bấm vào các liên kết điều hướng (tùy chọn)
         const navLinks = document.querySelectorAll('.nav-item');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {

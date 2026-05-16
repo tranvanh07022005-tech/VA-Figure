@@ -4,11 +4,11 @@
     border: 1px solid #eee;
     border-radius: 10px;
     padding: 15px;
-    box-shadow: $shadow; // Sử dụng biến shadow từ main.scss
+    box-shadow: $shadow; 
 
     .sidebar-title {
         font-size: 16px;
-        color: $primary-color; // Sử dụng biến màu chủ đạo
+        color: $primary-color;
         margin-bottom: 15px;
         border-bottom: 1px solid #eee;
         padding-bottom: 10px;
@@ -39,16 +39,16 @@
 
         // Lớp bọc link mới thêm vào
         .review-link {
-            text-decoration: none !important; // Triệt tiêu gạch chân hoàn toàn
-            color: inherit; // Tự động lấy màu chữ từ p bên trong
-            display: block; // Ép thẻ a chiếm hết không gian để dễ bấm
+            text-decoration: none !important; 
+            color: inherit; 
+            display: block; 
 
             .review-item {
                 display: flex;
                 gap: 12px;
                 margin-bottom: 15px;
                 cursor: pointer;
-                transition: transform 0.2s ease; // Thêm hiệu ứng chuyển động mượt
+                transition: transform 0.2s ease; 
 
                 img {
                     width: 80px;
@@ -62,15 +62,14 @@
                     font-weight: 600;
                     line-height: 1.4;
                     color: #334e6f;
-                    margin: 0; // Xóa margin mặc định để không lệch khung
+                    margin: 0; 
                 }
             }
 
-            // Hiệu ứng hover cho toàn bộ khối link
             &:hover .review-item {
                 transform: translateX(5px); 
                 p {
-                    color: $primary-color; // Đổi màu chữ khi rê chuột cho sinh động
+                    color: $primary-color; 
                 }
             }
         }

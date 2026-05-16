@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("VA Figure Script đã sẵn sàng!");
 
-    // === 1. XỬ LÝ SLIDER (BANNER) ===
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
     const prevBtn = document.querySelector('.prev-btn');
@@ -39,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentIndex);
     }, 5000);
 
-    // === 2. XỬ LÝ NÚT 3 GẠCH (HAMBURGER MENU) ===
     const menuToggle = document.getElementById('menu-toggle');
     const navList = document.getElementById('nav-list');
 
@@ -51,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // === 3. XỬ LÝ MENU CON (SUBMENU) ===
     const menuLinks = document.querySelectorAll('.has-submenu > a');
     menuLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -67,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // === 4. ĐÓNG MENU KHI BẤM RA NGOÀI ===
     document.addEventListener('click', (e) => {
         if (navList && navList.classList.contains('active')) {
             if (!navList.contains(e.target) && !menuToggle.contains(e.target)) {
@@ -77,12 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // === 5. XỬ LÝ BACK TO TOP (Đã đưa ra khỏi khối lồng) ===
     const backToTopBtn = document.getElementById('backToTop');
 
     if (backToTopBtn) {
         window.addEventListener('scroll', () => {
-            // Kiểm tra vị trí cuộn hiện tại
             const scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
             if (scrollPosition > 300) {

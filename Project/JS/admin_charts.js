@@ -3,12 +3,11 @@ const ctxSales = document.getElementById('chartSalesProduct').getContext('2d');
 new Chart(ctxSales, {
     type: 'line',
     data: {
-        // Chủ nhân để ý kỹ cái mảng labels này nhé, tôi viết "chuẩn" lắm đấy
         labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 9', 'Tháng 11', 'Tháng 12'],
         datasets: [{
             label: 'Sản phẩm',
             data: [165, 260, 180, 182, 155, 152, 250, 290, 280, 288, 265, 288],
-            borderColor: '#5db1e4', // Màu xanh Aqua như mẫu
+            borderColor: '#5db1e4', 
             backgroundColor: 'transparent',
             borderWidth: 3,
             pointBackgroundColor: '#fff',
@@ -16,7 +15,7 @@ new Chart(ctxSales, {
             pointBorderWidth: 2,
             pointRadius: 5,
             pointHoverRadius: 7,
-            tension: 0.4, // Tạo độ cong mượt mà cho đường kẻ
+            tension: 0.4, 
             fill: false
         }]
     },
@@ -36,7 +35,7 @@ new Chart(ctxSales, {
                 ticks: { stepSize: 20 }
             },
             x: {
-                grid: { display: false } // Tắt lưới dọc cho giống mẫu
+                grid: { display: false } 
             }
         }
     }
@@ -45,14 +44,14 @@ new Chart(ctxSales, {
 const ctxOrders = document.getElementById('chartOrdersTotal').getContext('2d');
 
 new Chart(ctxOrders, {
-    type: 'pie', // Biểu đồ hình bánh
+    type: 'pie',
     data: {
         labels: ['Đơn hàng thành công', 'Đơn hàng bị huỷ'],
         datasets: [{
             data: [920, 80], 
             backgroundColor: [
-                '#2ecc71', // Màu xanh lá mướt mắt cho thành công
-                '#ff7675'  // Màu đỏ nhạt cho đơn bị huỷ
+                '#2ecc71', 
+                '#ff7675'  
             ],
             borderWidth: 2,
             borderColor: '#ffffff'
@@ -60,13 +59,13 @@ new Chart(ctxOrders, {
     },
     options: {
         responsive: true,
-        maintainAspectRatio: false, // ÉP nó nở ra lấp đầy cái chart-wrapper
+        maintainAspectRatio: false, 
         plugins: {
             legend: {
                 display: true,
-                position: 'top', // Hiển thị chú thích ở trên như mẫu
+                position: 'top', 
                 labels: {
-                    usePointStyle: true, // Biến mấy cái ô vuông thành chấm tròn cho sang
+                    usePointStyle: true, 
                     padding: 20,
                     font: { size: 12 }
                 }
@@ -135,8 +134,8 @@ new Chart(ctxMonthly, {
         datasets: [{
             data: [65, 4], 
             backgroundColor: [
-                '#2ecc71', // Xanh mướt cho thành công
-                '#ff7675'  // Đỏ nhạt cho đơn lỗi
+                '#2ecc71', 
+                '#ff7675'  
             ],
             borderWidth: 2,
             borderColor: '#ffffff'
@@ -168,7 +167,7 @@ new Chart(ctxProfit, {
         datasets: [{
             label: 'VND',
             data: [1650000, 2600000, 1800000, 1820000, 1550000, 1550000],
-            borderColor: '#2ecc71', // Màu xanh lợi nhuận
+            borderColor: '#2ecc71', 
             backgroundColor: 'transparent',
             borderWidth: 4, 
             pointBackgroundColor: '#fff',
@@ -196,7 +195,7 @@ new Chart(ctxProfit, {
                 ticks: { stepSize: 500000 }
             },
             x: {
-                grid: { display: true } // Hiện lưới dọc cho giống mẫu
+                grid: { display: true } 
             }
         }
     }

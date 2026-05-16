@@ -4,7 +4,7 @@
     min-height: calc(100vh - 70px);
 }
 
-/* Container cho Form - Đã chỉnh lại tỉ lệ 2:1 chuẩn mẫu */
+/* Container cho Form  */
 .product-form-container {
     display: flex;
     gap: 30px;
@@ -20,12 +20,10 @@
     border: 1px solid #eee;
 }
 
-/* Khung bên trái rộng hơn (Chiếm 2 phần) */
 .main-form { 
     flex: 2; 
 }
 
-/* Khung bên phải nhỏ lại (Chiếm 1 phần) */
 .image-upload-card { 
     flex: 1; 
     position: static; 
@@ -113,7 +111,7 @@
 .btn-save:hover { background: #ffc745; }
 .btn-cancel { background: #95a5a6; color: white; padding: 12px 30px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
 
-/* Upload Area - CANH GIỮA HOÀN HẢO */
+/* Upload Area  */
 .upload-area {
     border: 2px dashed #ddd;
     background: #fafafa;
@@ -129,9 +127,9 @@
 
 .upload-content {
     display: flex;
-    flex-direction: column; /* Xếp dọc: Mây -> Nút -> Chữ */
-    align-items: center;    /* Canh giữa ngang */
-    justify-content: center; /* Canh giữa dọc */
+    flex-direction: column; 
+    align-items: center;   
+    justify-content: center; 
     gap: 15px;              
 }
 

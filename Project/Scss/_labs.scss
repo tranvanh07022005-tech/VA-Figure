@@ -1,24 +1,21 @@
-/* ============================================================
-   FILE: _LABS.SCSS (Chỉ chứa giao diện danh sách Lab)
-   ============================================================ */
 
 .lab-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); // 4 cột trên PC
+    grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
     width: 100%;
     padding: 10px 0;
 
     @media (max-width: 1200px) {
-        grid-template-columns: repeat(3, 1fr); // 3 cột trên tablet lớn
+        grid-template-columns: repeat(3, 1fr); 
     }
 
     @media (max-width: 992px) {
-        grid-template-columns: repeat(2, 1fr); // 2 cột trên tablet nhỏ
+        grid-template-columns: repeat(2, 1fr); 
     }
 
     @media (max-width: 576px) {
-        grid-template-columns: 1fr; // 1 cột duy nhất trên điện thoại
+        grid-template-columns: 1fr; 
     }
 }
 
@@ -29,7 +26,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; // Đẩy nút "Xem chi tiết" xuống đáy card
+    justify-content: space-between; 
     min-height: 250px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
     transition: transform 0.2s ease, box-shadow 0.2s ease;

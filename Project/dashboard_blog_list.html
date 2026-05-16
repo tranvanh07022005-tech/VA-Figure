@@ -66,7 +66,6 @@
     </div>
 
     <script>
-        // Data tin tức từ hình ảnh image_edb7ba.png
         const blogs = [
             { id: 'b-01', img: 'Images/64786b91-9496-4495-9423-93cc39627640.jpg', title: '[FURYU] LỊCH PHÁT HÀNH MÔ HÌNH GAMEPRIZE THÁNG 6/2026' },
             { id: 'b-02', img: 'Images/f5a2b6c3-e681-433e-acc8-d671baf2aae9.jpg', title: '[TAITO] LỊCH PHÁT HÀNH MÔ HÌNH GAMEPRIZE THÁNG 8/2026' },
@@ -81,7 +80,6 @@
 
         const tbody = document.getElementById('blog-list-body');
         blogs.forEach(b => {
-            // Nhấn vào để "bay" sang trang sửa tin tức (nếu có)
             const editUrl = `add_blog.html?title=${encodeURIComponent(b.title)}&img=${encodeURIComponent(b.img)}`;
 
             const row = `

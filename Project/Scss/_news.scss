@@ -1,5 +1,5 @@
 /* ==========================================================================
-   NEWS SECTION (Cập nhật hỗ trợ Link & Hiệu ứng)
+   NEWS SECTION 
    ========================================================================== */
 .news-section {
     display: block !important;
@@ -27,19 +27,19 @@
 
 // Lớp bọc link mới cho toàn bộ Card
 .news-card-link {
-    text-decoration: none !important; // Chống gạch chân
-    color: inherit; // Lấy màu mặc định của chữ
+    text-decoration: none !important; 
+    color: inherit; 
     display: block;
     transition: $transition;
 
-    // Hiệu ứng Hover tổng thể từ thẻ A
+    // Hiệu ứng Hover tổng thể 
     &:hover {
         .news-card {
             .news-img-wrapper img {
                 transform: scale(1.1);
             }
             .news-title {
-                color: $primary-hover; // Đổi màu tiêu đề khi hover vào vùng card
+                color: $primary-hover; 
             }
         }
     }

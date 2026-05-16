@@ -1,5 +1,5 @@
 // ----------------------------------------------------
-// TRANG CỬA HÀNG - PHONG CÁCH CHUYÊN NGHIỆP TỔNG THỂ
+// TRANG CỬA HÀNG 
 // ----------------------------------------------------
 .page-shop {
     background-color: #f4f7f9;
@@ -34,24 +34,24 @@
         border: 1px solid #e5e7eb;
         border-radius: 12px;
         box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        overflow: hidden; // Đảm bảo bo góc ăn vào nội dung con
+        overflow: hidden; 
     }
 
     .shop-wrapper {
         display: flex;
-        gap: 0; // Xóa khoảng cách để dùng border ngăn cách
+        gap: 0; 
 
         @media (max-width: 1024px) {
             flex-direction: column;
         }
     }
 
-    // 3. Cột Sidebar (Nằm bên trái trong khung lớn)
+    // 3. Cột Sidebar 
     .shop-sidebar {
         flex: 0 0 280px;
         width: 100%;
         padding: 30px;
-        border-right: 1px solid #f0f0f0; // Đường ngăn cách dọc
+        border-right: 1px solid #f0f0f0; 
 
         @media (max-width: 1024px) {
             border-right: none;
@@ -85,7 +85,7 @@
             }
 
             .filter-list {
-                display: none; // MẶC ĐỊNH THU LẠI
+                display: none;
                 list-style: none;
                 margin-top: 15px;
                 
@@ -111,7 +111,7 @@
         }
     }
 
-    // 4. Cột Nội dung chính (Nằm bên phải trong khung lớn)
+    // 4. Cột Nội dung chính 
     .shop-main {
         flex: 1;
         width: 100%;
@@ -123,7 +123,7 @@
             align-items: center;
             padding-bottom: 20px;
             margin-bottom: 30px;
-            border-bottom: 1px solid #f0f0f0; // Đường kẻ ngang dưới tiêu đề
+            border-bottom: 1px solid #f0f0f0; 
 
             h2 { font-size: 18px; color: #333; font-weight: 800; }
             .toolbar-actions {
@@ -269,7 +269,6 @@
                 }
             }
 
-            // PHẢI ĐỂ HOVER Ở CUỐI CÙNG ĐỂ GHI ĐÈ LÊN TRẠNG THÁI CỦA .item-info
             &:hover {
                 transform: translateY(-8px);
                 border-color: #eab026;
