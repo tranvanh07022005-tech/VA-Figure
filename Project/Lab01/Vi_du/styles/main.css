@@ -1,6 +1,11 @@
 @charset "utf-8";
 
-/* CSS Document */
+/* ==========================================================================
+   1. CẤU HÌNH CƠ BẢN & RESET
+   ========================================================================== */
+* {
+    box-sizing: border-box; /* Giúp tính toán width chính xác bao gồm cả padding và border */
+}
 
 body {
     background-position: top;
@@ -9,14 +14,26 @@ body {
     font-family: "Rubik", sans-serif;
 }
 
+/* Biến container từ cố định thành linh hoạt */
 #container {
-    width: 1000px;
+    max-width: 1000px;
+    width: 100%;
     margin: 0 auto;
+    padding: 0 10px;
 }
 
+/* Đảm bảo hình ảnh không bao giờ tràn khung */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==========================================================================
+   2. STYLE GIAO DIỆN MẶC ĐỊNH (DESKTOP)
+   ========================================================================== */
 #header {
-    height: 173px;
-    /* background-color: #ffb266; */
+    height: auto;
+    min-height: 173px;
     border-radius: 5px;
 }
 
@@ -38,13 +55,18 @@ body {
 }
 
 #banner_logo {
-    float: right ;
-    
+    float: right;
+    width: 100%;
 }
 
+#banner_logo img {
+    width: 100% !important; /* Ghi đè thuộc tính width="1000px" trong HTML */
+    height: auto !important;
+}
 
 #menu {
-    height: 50px;
+    height: auto;
+    min-height: 50px;
 }
 
 #menu_left_corner {
@@ -53,11 +75,11 @@ body {
     height: 50px;
     background-color: #504b4b;
     border-radius: 50px 0px 0px 50px;
-    ;
 }
 
 #menu_content {
-    width: 983px;
+    width: calc(100% - 17px); /* Tính toán linh hoạt thay vì cố định 983px */
+    max-width: 983px;
     height: 50px;
     background-color: #504b4b;
     float: left;
@@ -75,6 +97,7 @@ body {
     list-style-type: none;
     margin-left: -20px;
     margin-top: 0px;
+    padding: 0;
 }
 
 #hmenu li {
@@ -92,7 +115,7 @@ body {
 }
 
 #hmenu li a:hover {
-    color: #f4e0ce
+    color: #f4e0ce;
 }
 
 .devider {
@@ -105,18 +128,18 @@ body {
 }
 
 #left {
-    width: 196px;
+    width: 19.6%;
     float: left;
 }
 
 #content {
-    width: 588px;
+    width: 58.8%;
     float: left;
-    margin-left: 10px;
+    margin-left: 1%;
 }
 
 #right {
-    width: 196px;
+    width: 19.6%;
     float: right;
 }
 
@@ -147,7 +170,7 @@ body {
     width: 48px;
     height: 48px;
     float: left;
-    background-image: url(../images/layout/shoppingcart.png)
+    background-image: url(../images/layout/shoppingcart.png);
 }
 
 #footer {
@@ -158,12 +181,14 @@ body {
     line-height: 20px;
     font-style: italic;
     background-image: url(../images/layout/footer_bg.gif);
+    clear: both;
 }
 
 .categories {
     list-style-type: none;
     margin-top: 0px;
-    margin-left: -40px;
+    margin-left: 0;
+    padding: 0;
 }
 
 .categories li a {
@@ -171,6 +196,7 @@ body {
     color: #504b4b;
     line-height: 30px;
     display: block;
+    padding-left: 10px;
 }
 
 .categories li a:hover {
@@ -189,13 +215,11 @@ body {
 
 .lmenu1 {
     background-color: #dad0d0;
-    padding-left: 5px;
     margin-bottom: 1px;
 }
 
 .lmenu2 {
     background-color: #eee6e6;
-    padding-left: 5px;
     margin-bottom: 1px;
 }
 
@@ -209,89 +233,12 @@ body {
     line-height: 33px;
     color: #847676;
     font-weight: bold;
-    padding-left: 50px;
+    padding-left: 20px;
     background: url(../images/layout/bar_bg.gif) no-repeat center;
-}
-
-.center_content {
-    padding: 7px;
-}
-
-.product_box {
-    width: 173px;
-    height: auto;
-    float: left;
-    padding: 9px;
-}
-
-.pro_box_top {
-    height: 12px;
-    background-image: url(../images/layout/product_box_top.gif);
-}
-
-.pro_box_bot {
-    height: 10px;
-    background-image: url(../images/layout/product_box_bottom.gif);
-}
-
-.pro_box_mid {
-    background-image: url(../images/layout/product_box_center.gif);
-}
-
-.pro_title {
-    text-align: center;
-    font-weight: bold;
-    color: #F00;
-    font-size: 14px;
-}
-
-.pro_title a {
-    text-decoration: none;
-    color: #F00;
-}
-
-.pro_price {
-    text-align: center;
-    color: #F00;
-    font-weight: bold;
-    width: 50%;
-    float: left;
-    font-size: 14px;
-}
-
-.oldprice {
-    text-align: center;
-    color: #847676;
-    text-decoration: line-through;
-    width: 50%;
-    float: right;
-    font-size: 14px;
-}
-
-.pro_cart {
-    width: 50%;
-    float: right;
-    font-size: 14px;
-    text-align: center;
-}
-
-.pro_cart a {
-    text-decoration: none;
-    color: #0fa0dd;
-}
-
-.pro_img {
-    text-align: center;
-    padding: 5px 0px;
-}
-
-.pro_img img {
-    height: 100px;
 }
 
 .big_box {
     width: 554px;
-    margin-left: 17px;
     margin-top: 15px;
 }
 
@@ -307,70 +254,17 @@ body {
 
 .big_box_mid {
     background-image: url(../images/layout/details_box_center.gif);
-    padding: 5px;
+    padding: 15px;
+    overflow: hidden; /* Clear float cho ảnh sản phẩm */
 }
 
-.big_box_img {
-    width: 200px;
-    float: left;
-    text-align: center;
-}
-
-.big_box_img img {
-    width: 200px;
-    height: 200px;
-}
-
-.big_box_detail {
-    width: 350px;
-    float: right;
-}
-
-.thumb img {
-    width: 50px;
-    height: 40px;
-    padding: 5px 0px;
-}
-
-.add_cart img {
-    width: 16px;
-    height: 16px;
-}
-
-.add_cart a {
-    text-decoration: none;
-    color: #006;
-}
-
-.pro_title_big {
-    color: #F00;
-    font-weight: bold;
+.big_box_mid img {
+    margin-right: 15px;
+    margin-bottom: 15px;
 }
 
 .spec_value {
     color: #5F9FAB;
-}
-
-.price {
-    color: #F00;
-    font-weight: bold;
-}
-
-.detail {
-    margin-top: 10px;
-    text-align: justify;
-}
-
-.detail img {
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.detail span {
-    font-size: 18px;
-    line-height: 35px;
-    font-weight: bold;
 }
 
 .search-container {
@@ -400,7 +294,199 @@ button:hover {
     border: 1px solid gray;
 }
 
-/* Font Awesome Icon */
 button i {
     margin-right: 5px;
+}
+
+/* Ẩn nút Hamburger ở màn hình máy tính lớn */
+#menu_toggle {
+    display: none;
+    color: #e8ffff;
+    line-height: 50px;
+    padding-left: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#menu_toggle i {
+    margin-right: 8px;
+}
+
+
+/* ==========================================================================
+   3. CÁC ĐOẠN MEDIA QUERIES (RESPONSIVE CHUYỂN HAMBURGER < 1024PX)
+   ========================================================================== */
+
+/* --- Medium Device = 1200px --- */
+@media only screen and (max-width: 1200px) {
+    /* Khung chính của bạn là 1000px nên ở màn hình 1200px giao diện vẫn hiển thị chuẩn chỉnh */
+    #container {
+        max-width: 1000px;
+    }
+}
+
+/* --- CHUYỂN ĐỔI HAMBURGER MENU & GIAO DIỆN DỌC < 1024px (Mốc 1023px) --- */
+@media only screen and (max-width: 1023px) {
+    /* Ẩn các góc menu rườm rà để menu trải dài 100% */
+    #menu_left_corner, #menu_right_corner {
+        display: none;
+    }
+    #menu_content {
+        width: 100%;
+        height: auto;
+        position: relative; /* Làm điểm tựa định vị cho menu xổ xuống */
+    }
+
+    /* Hiện nút Hamburger */
+    #menu_toggle {
+        display: block;
+    }
+
+    /* Ẩn danh sách menu mặc định, biến thành menu dọc tuyệt đối */
+    #hmenu {
+        display: none; 
+        position: absolute;
+        top: 50px; /* Xuất hiện ngay dưới thanh menu chính */
+        left: 0;
+        width: 100%;
+        background-color: #504b4b;
+        margin: 0;
+        padding: 0;
+        z-index: 9999; /* Đảm bảo menu nằm đè lên nội dung bên dưới */
+    }
+
+    /* Hiển thị menu khi người dùng click (JavaScript thêm class .open) */
+    #hmenu.open {
+        display: block;
+    }
+
+    #hmenu li {
+        float: none;
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid #666; /* Vạch ngăn cách giữa các mục */
+    }
+
+    #hmenu li a {
+        padding-left: 20px;
+        line-height: 45px;
+    }
+
+    .devider {
+        display: none; /* Ẩn dấu gạch chia menu cũ */
+    }
+
+    /* Chuyển 3 cột (Trái - Giữa - Phải) thành dạng xếp chồng hàng dọc */
+    #left, #content, #right {
+        width: 100% !important;
+        float: none !important;
+        margin-left: 0 !important;
+        margin-bottom: 25px;
+    }
+
+    /* ==========================================================================
+       THÊM MỚI: Sửa lỗi thanh tiêu đề "43 Bí mật..." bị co cụm giữa màn hình iPad
+       ========================================================================== */
+    .center_title {
+        width: 100% !important;
+        background: #eee6e6 !important; /* Bỏ ảnh gif cũ, thay bằng màu nền xám đồng bộ */
+        border-radius: 6px;             /* Bo nhẹ góc */
+        padding-left: 15px;
+        font-size: 16px;
+    }
+
+    /* ==========================================================================
+       CẬP NHẬT: Ép hộp sản phẩm giãn 100% và đổi màu nền sang xám nhẹ nguyên bản
+       ========================================================================== */
+    .big_box {
+        width: 100% !important;       /* Ép giãn hết chiều ngang iPad */
+        margin-left: 0 !important;    /* Xóa khoảng cách lề trái cũ */
+        background-color: #eee6e6;    /* Trả về màu xám nhẹ nguyên bản thay vì trắng tinh */
+        border: 1px solid #dad0d0;    /* Tự vẽ viền bằng CSS thay vì dùng ảnh gif */
+        border-radius: 8px;           /* Bo tròn các góc hộp mượt mà */
+        overflow: hidden;
+        margin-top: 15px;
+    }
+
+    /* Ẩn hoàn toàn 2 khay ảnh gif top và bot cũ không cần thiết nữa */
+    .big_box_top, .big_box_bot {
+        display: none !important;
+    }
+
+    /* Xóa bỏ ảnh nền center.gif bị lặp */
+    .big_box_mid {
+        background-image: none !important; 
+        padding: 20px;
+    }
+    
+    /* Căn chỉnh lại hộp chi tiết sản phẩm */
+    .big_box_mid img {
+        float: none !important;
+        display: block;
+        margin: 0 auto 15px auto; /* Đưa ảnh ra giữa */
+        max-width: 200px;
+    }
+}
+
+/* --- Tablet Device = 768px --- */
+@media only screen and (max-width: 768px) {
+    /* Mốc này tự động kế thừa giao diện dọc và hamburger từ mốc 1023px ở trên */
+    /* Bạn có thể thêm các tinh chỉnh CSS đặc thù cho máy tính bảng tại đây nếu phát sinh */
+}
+
+/* --- Wide Mobile = 480px --- */
+@media only screen and (max-width: 480px) {
+    /* 1. Kích hoạt Flexbox cho khung cha #main để điều khiển các cột con */
+    #main {
+        display: flex;
+        flex-wrap: wrap; /* Cho phép các phần tử tự động xuống hàng khi hết chỗ */
+    }
+
+    /* 2. Đẩy cột giữa (Nội dung sách) lên vị trí đầu tiên, chiếm trọn 100% bề ngang mobile */
+    #content {
+        width: 100% !important;
+        float: none !important;
+        margin-left: 0 !important;
+        margin-bottom: 20px;
+        order: 3; 
+    }
+
+    /* 3. Ép cột bên trái (Loại sản phẩm) chiếm 50% chiều rộng, đứng vị trí số 2 */
+    #left {
+        width: 50% !important;
+        float: none !important;
+        margin-left: 0 !important;
+        margin-bottom: 25px;
+        order: 1;/* Thừa lệnh xuất hiện đầu tiên */
+        padding-right: 4px; /* Tạo một khoảng hở nhỏ ở giữa 2 cột cho tinh tế */
+    }
+
+    /* 4. Ép cột bên phải (Hãng sản xuất) chiếm 50% chiều rộng, đứng vị trí số 3 (chung hàng với cột trái) */
+    #right {
+        width: 50% !important;
+        float: none !important;
+        margin-left: 0 !important;
+        margin-bottom: 25px;
+        order: 2;
+        padding-left: 4px; /* Tạo một khoảng hở nhỏ ở giữa 2 cột cho tinh tế */
+    }
+    
+    /* Giữ nguyên phần tinh chỉnh tiêu đề cũ của bạn */
+    .center_title {
+        font-size: 16px;
+        padding-left: 10px;
+        background: #eee; 
+    }
+}
+
+/* --- Small Device = 320px --- */
+@media only screen and (max-width: 320px) {
+    body {
+        font-size: 13px; /* Thu nhỏ chữ một chút để vừa màn hình quá bé */
+    }
+    #container {
+        padding: 0 5px;
+    }
+    .title {
+        font-size: 14px;
+    }
 }
